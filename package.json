@@ -1,0 +1,41 @@
+{
+  "name": "rctx-contextmenu",
+  "version": "1.0.0",
+  "description": "Contextmenu for react",
+  "main": "dist/index.js",
+  "repository": "reachtokish/rctx-contextmenu",
+  "author": "reachtokish <patra.kishore65@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "clean:demo": "rm -rf ./example/dist",
+    "start": "parcel watch ./lib/index.js --out-dir ./dist",
+    "start:demo": "parcel ./example/src/index.html --out-dir ./example/dist",
+    "build": "parcel build ./lib/index.js --global rctx-contextmenu",
+    "build:demo": "parcel build ./example/src/index.html --out-dir ./example/dist --public-url ./",
+    "autobuild:on": "cp autobuild.hook .git/hooks/pre-commit",
+    "autobuild:off": "rm .git/hooks/pre-commit",
+    "deploy": "gh-pages -d ./example/dist",
+    "sourcemap": "source-map-explorer --html ./dist/index.js ./dist/index.map > source-map.html"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-plugin-lodash": "^3.3.4",
+    "gh-pages": "^2.1.0",
+    "parcel-bundler": "^1.12.3",
+    "source-map-explorer": "^2.0.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "alias": {
+    "rctx-contextmenu": "./dist"
+  }
+}
