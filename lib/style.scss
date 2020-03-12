@@ -1,0 +1,29 @@
+.contextmenu {
+  position: fixed;
+  width: 200px;
+  left: 0;
+  top: calc(100% + 10px);
+  border: solid 1px #ccc;
+  border-radius: 4px;
+  display: none;
+  background-color: #fff;
+  padding: 5px 0;
+  &__item {
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 6px 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+    &:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  }
+}
+
+.menu-trigger {
+  display: inline-block;
+}

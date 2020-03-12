@@ -1,31 +1,32 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-  },
-  extends: [
-    'plugin:react/recommended',
-    'standard',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
-  parser: "babel-eslint",
-  parserOptions: {
-    ecmaVersion: 6,
-    ecmaFeatures: {
-      jsx: true,
-      experimentalObjectRestSpread: true
+    "env": {
+        "browser": true,
+        "es6": true
     },
-    sourceType: 'module',
-  },
-  plugins: [
-    'react',
-  ],
-  rules: {
-    "brace-style": ["error", "stroustrup"],
-    "no-tabs": ["error", { allowIndentationTabs: true }],
-    "eol-last": ["error", "never"]
-  },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "linebreak-style": [0],
+        "comma-dangle": ["error", "never"],
+        "brace-style": ["error", "stroustrup"],
+        "react/jsx-filename-extension": [0],
+        "react/prop-types": [0]
+    }
 };
