@@ -27,6 +27,7 @@ module.exports = {
         "comma-dangle": ["error", "never"],
         "brace-style": ["error", "stroustrup"],
         "react/jsx-filename-extension": [0],
-        "react/prop-types": [0]
+        "react/prop-types": [0],
+        "arrow-parens": ["error", "as-needed"]
     }
 };
