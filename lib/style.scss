@@ -9,6 +9,7 @@
   background-color: #fff;
   padding: 5px 0;
   &__item {
+    $item: &;
     font-size: 14px;
     display: block;
     text-decoration: none;
@@ -17,9 +18,13 @@
     cursor: pointer;
     user-select: none;
     transition: 0.2s;
-    &:hover {
+    &:hover:not(#{$item}--disabled) {
       background-color: #333;
       color: #fff;
+    }
+    &--disabled {
+      opacity: 0.5;
+      cursor: no-drop;
     }
   }
 }

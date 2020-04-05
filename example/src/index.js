@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { ContextMenu, ContextMenuItem, ContextMenuTrigger } from '../../lib';
+import ContextMenu from '../../lib/contextMenu';
+import ContextMenuTrigger from '../../lib/contextMenuTrigger';
+import ContextMenuItem from '../../lib/contextMenuItem';
+// import { ContextMenu, ContextMenuItem, ContextMenuTrigger } from '../../lib';
 
 import '../../lib/style.scss';
 import './style.scss';
@@ -23,7 +26,16 @@ const Demo = () => {
             </ul>
           </div>
           <div className="content">
-            <ContextMenuTrigger id="my-context-menu-1">
+            <ContextMenuTrigger
+              id="my-context-menu-1"
+              attributes={{
+                role: 'Abc',
+                'no-up': 'None'
+              }}
+              disable={false}
+              renderTag="span"
+              disableIfShiftIsPressed={true}
+            >
               <div className="box">
                 Right Click On Me
               </div>
@@ -36,12 +48,41 @@ const Demo = () => {
                 Right Click On Me
               </div>
             </ContextMenuTrigger>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
+            <h1>Hey</h1>
 
-            <ContextMenu id="my-context-menu-1">
-              <ContextMenuItem>Menu item 1</ContextMenuItem>
-              <ContextMenuItem>Menu item 1</ContextMenuItem>
-              <ContextMenuItem>Menu item 1</ContextMenuItem>
-              <ContextMenuItem>Menu item 1</ContextMenuItem>
+            <ContextMenu
+              id="my-context-menu-1"
+              appendTo={document.querySelector('body')}
+              hideOnLeave={true}
+              onMouseLeave={e => console.log(e)}
+              onHide={() => console.log("Hidden")}
+              preventHideOnResize={true}
+              preventHideOnScroll={true}
+            >
+              <ContextMenuItem onClick={(e) => console.log(e.target)}>Menu item 1</ContextMenuItem>
+              <ContextMenuItem disabled={true}>Menu item 1</ContextMenuItem>
+              <ContextMenuItem preventClose={true}>Menu item 1</ContextMenuItem>
+              <ContextMenuItem
+                attributes={{
+                  role: 'Abc',
+                  'no-up': 'None'
+                }}
+              >
+                Menu item 1
+              </ContextMenuItem>
               <ContextMenuItem>Menu item 1</ContextMenuItem>
             </ContextMenu>
 
@@ -55,6 +96,7 @@ const Demo = () => {
           </div>
         </div>
       </div>
+      <div id="append_class" />
     </div>
   )
 };
