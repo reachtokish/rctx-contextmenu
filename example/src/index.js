@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ContextMenu from '../../lib/contextMenu';
 import ContextMenuTrigger from '../../lib/contextMenuTrigger';
 import ContextMenuItem from '../../lib/contextMenuItem';
+import SubMenu from '../../lib/subMenu';
 // import { ContextMenu, ContextMenuItem, ContextMenuTrigger } from '../../lib';
 
 import '../../lib/style.scss';
@@ -89,9 +90,14 @@ const Demo = () => {
             <ContextMenu id="my-context-menu-2">
               <ContextMenuItem>Menu item 2</ContextMenuItem>
               <ContextMenuItem>Menu item 2</ContextMenuItem>
-              <ContextMenuItem>Menu item 2</ContextMenuItem>
-              <ContextMenuItem>Menu item 2</ContextMenuItem>
-              <ContextMenuItem>Menu item 2</ContextMenuItem>
+              <SubMenu title="Menu item 2">
+                <ContextMenuItem>Sub menu item 2</ContextMenuItem>
+                <ContextMenuItem>Sub menu item 2</ContextMenuItem>
+                <SubMenu title="Menu item 2">
+                  <ContextMenuItem>Sub menu item 2</ContextMenuItem>
+                  <ContextMenuItem>Sub menu item 2</ContextMenuItem>
+                </SubMenu>
+              </SubMenu>
             </ContextMenu>
           </div>
         </div>

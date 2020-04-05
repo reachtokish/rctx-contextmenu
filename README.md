@@ -59,6 +59,10 @@ Context menu for React
   </tbody>
 </table>
 
+## `<ContextMenuTrigger />`
+
+## `<SubMenu />`
+
 hideOnLeave, onMouseLeave, preventHideOnResize, preventHideOnScroll, disableIfShiftIsPressed
 
 ContextMenuTrigger - attributes, disable
