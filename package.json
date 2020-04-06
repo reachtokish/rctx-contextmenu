@@ -1,6 +1,6 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Contextmenu for react",
   "main": "dist/index.js",
   "repository": "reachtokish/rctx-contextmenu",
