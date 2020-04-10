@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { MENU_SHOW, trigger } from './trigger';
 
 function ContextMenuTrigger({
   children, id, attributes, disable, renderTag, disableIfShiftIsPressed
@@ -8,22 +9,27 @@ function ContextMenuTrigger({
   useEffect(() => {
     if (!disable) {
       menuTrigger.current.addEventListener('contextmenu', e => {
-        if (disableIfShiftIsPressed && e.shiftKey) return;
-
         e.preventDefault();
 
-        Object.keys(window.contextMenus).forEach(contextMenu => {
-          window.contextMenus[contextMenu].hideMenu();
-        });
+        const { clientX, clientY } = e;
 
-        window.contextMenus[id].showMenu(e.clientY, e.clientX);
+        if (disableIfShiftIsPressed && e.shiftKey) return;
+
+        const opts = {
+          position: {
+            clientY,
+            clientX
+          },
+          targetElem: e.target,
+          id
+        };
+
+        trigger(MENU_SHOW, opts);
       }, false);
     }
 
     return () => {
-      document.removeEventListener('click');
       menuTrigger.current.removeEventListener('contextmenu');
-      document.removeEventListener('contextmenu');
     };
   }, []);
 

@@ -1,16 +1,21 @@
 import React, { useCallback } from 'react';
+import { trigger, MENU_HIDE } from './trigger';
 
 function ContextMenuItem({
-  children, onClick, disabled, preventClose, attributes
+  children, onClick, disabled, preventClose, attributes, id
 }) {
   const handleClickEvent = useCallback(e => {
     if (disabled) return;
     onClick(e);
 
     if (!preventClose) {
-      Object.keys(window.contextMenus).forEach(contextMenu => {
-        window.contextMenus[contextMenu].hideMenu();
-      });
+      const opts = {
+        position: null,
+        targetElem: null,
+        id
+      };
+
+      trigger(MENU_HIDE, opts);
     }
   });
 

@@ -1,23 +1,30 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Contextmenu for react",
-  "main": "dist/index.js",
   "repository": "reachtokish/rctx-contextmenu",
   "author": "reachtokish <patra.kishore65@gmail.com>",
   "license": "MIT",
   "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "clean:demo": "rm -rf ./example/dist",
-    "start": "parcel watch ./lib/index.js --out-dir ./dist",
-    "start:demo": "parcel ./example/src/index.html --out-dir ./example/dist",
-    "build": "parcel build ./lib/index.js --global rctx-contextmenu",
-    "build:demo": "parcel build ./example/src/index.html --out-dir ./example/dist --public-url ./",
-    "autobuild:on": "cp autobuild.hook .git/hooks/pre-commit",
-    "autobuild:off": "rm .git/hooks/pre-commit",
-    "deploy": "gh-pages -d ./example/dist",
-    "sourcemap": "source-map-explorer --html ./dist/index.js ./dist/index.map > source-map.html"
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "npm run build",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.4",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
@@ -25,15 +32,36 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
-    "parcel-bundler": "^1.12.4"
+    "@svgr/rollup": "^2.4.1",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.4",
+    "gh-pages": "^1.2.0",
+    "prop-types": "^15.5.4",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "^1.1.4",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-css-only": "^1.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-url": "^1.4.0"
   },
   "dependencies": {
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "node-sass": "^4.13.1"
   },
   "alias": {
     "rctx-contextmenu": "./dist"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

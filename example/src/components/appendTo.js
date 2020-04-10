@@ -21,10 +21,10 @@ function AppendTo() {
         id="my-context-menu-2"
         appendTo={document.querySelector('body')}
       >
-        <ContextMenuItem>Menu item 1</ContextMenuItem>
-        <ContextMenuItem>Menu item 1</ContextMenuItem>
-        <ContextMenuItem>Menu item 1</ContextMenuItem>
-        <ContextMenuItem>Menu item 1</ContextMenuItem>
+        <ContextMenuItem>Appended Item 1</ContextMenuItem>
+        <ContextMenuItem>Appended Item 2</ContextMenuItem>
+        <ContextMenuItem>Appended Item 3</ContextMenuItem>
+        <ContextMenuItem>Appended Item 4</ContextMenuItem>
       </ContextMenu>
     </div>
   )

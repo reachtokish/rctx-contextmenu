@@ -18,10 +18,10 @@ function Basic() {
       </ContextMenuTrigger>
 
       <ContextMenu id="my-context-menu-1">
-        <ContextMenuItem>Menu item 2</ContextMenuItem>
-        <ContextMenuItem>Menu item 2</ContextMenuItem>
-        <ContextMenuItem>Menu item 2</ContextMenuItem>
-        <ContextMenuItem>Menu item 2</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 3</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
       </ContextMenu>
     </div>
   )

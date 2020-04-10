@@ -19,12 +19,11 @@ function DisableMenuItem() {
 
       <ContextMenu
         id="my-context-menu-3"
-        appendTo={document.querySelector('body')}
       >
-        <ContextMenuItem>Menu item 1</ContextMenuItem>
-        <ContextMenuItem disabled={true}>Menu item 1</ContextMenuItem>
-        <ContextMenuItem>Menu item 1</ContextMenuItem>
-        <ContextMenuItem>Menu item 1</ContextMenuItem>
+        <ContextMenuItem>Disabled Item 1</ContextMenuItem>
+        <ContextMenuItem disabled={true}>Disabled Item 2</ContextMenuItem>
+        <ContextMenuItem>Disabled Item 3</ContextMenuItem>
+        <ContextMenuItem>Disabled Item 4</ContextMenuItem>
       </ContextMenu>
     </div>
   )
