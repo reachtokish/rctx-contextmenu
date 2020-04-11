@@ -115,7 +115,7 @@ npm install --save rctx-contextmenu
   </tbody>
 </table>
 
-## `<ContextMenuTrigger />`
+### `<ContextMenuTrigger />`
 <table class="table table-bordered table-striped">
   <thead>
     <tr>

@@ -9,14 +9,17 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "homepage": "https://reachtokish.github.io/rctx-contextmenu",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
+    "clean": "rimraf ./dist",
     "start": "parcel example/index.html",
-    "build": "rollup -c",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build",
+    "build": "npm run clean && rollup -c",
+    "build:example": "npm run clean && parcel build example/index.html",
+    "predeploy": "npm run build:example",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint ./src"
   },
   "dependencies": {
@@ -36,6 +39,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",
