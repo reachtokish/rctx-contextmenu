@@ -15,9 +15,9 @@
   },
   "scripts": {
     "clean": "rimraf ./dist",
-    "start": "parcel example/index.html",
+    "start": "parcel example/public/index.html",
     "build": "npm run clean && rollup -c",
-    "build:example": "npm run clean && parcel build example/index.html",
+    "build:example": "npm run clean && parcel build example/public/index.html --public-url ./",
     "predeploy": "npm run build:example",
     "deploy": "gh-pages -d dist",
     "lint": "eslint ./src"
@@ -64,5 +64,17 @@
   },
   "files": [
     "dist"
+  ],
+  "alias": {
+    "example": "./example",
+    "src": "./src"
+  },
+  "keywords": [
+    "react",
+    "contextmenu",
+    "react-contextmenu",
+    "rctx-contextmenu",
+    "react-component",
+    "right click"
   ]
 }
