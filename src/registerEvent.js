@@ -28,8 +28,6 @@ const registerCallback = (showMenu, hideMenu) => {
   return id;
 };
 
-const returnCallback = () => {
-  return callbacks;
-};
+const returnCallback = () => callbacks;
 
 export { registerCallback, returnCallback };

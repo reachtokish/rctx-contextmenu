@@ -118,7 +118,7 @@ function ContextMenu({
       document.removeEventListener('contextmenu');
       window.removeEventListener('scroll');
       window.removeEventListener('resize');
-    }
+    };
   });
 
   const childrenWithProps = React.Children
