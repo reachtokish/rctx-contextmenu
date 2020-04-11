@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContextMenu, ContextMenuItem, ContextMenuTrigger } from '../../../lib';
+import { ContextMenu, ContextMenuItem, ContextMenuTrigger } from '../../src';
 import linkIco from '../assets/images/link.svg';
 
 function Basic() {

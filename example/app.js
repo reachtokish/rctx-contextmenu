@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Basic, AppendTo, DisableMenuItem } from './components';
 
-import '../../lib/style.scss';
+// import '../lib/style.scss';
 import './style.scss';
 
 const Demo = () => {
