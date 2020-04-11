@@ -1,7 +1,9 @@
 ![NPM Badge](https://badge.fury.io/js/rctx-contextmenu.svg)
 
 # rctx-contextmenu
-Context menu for React. [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
+Context menu for React. <a href="https://reachtokish.github.io/rctx-contextmenu/" target="_blank">Live Demo</a> | <a href="https://github.com/reachtokish/rctx-contextmenu/tree/master/example" target="_blank">Example Code</a>[]()
+
+
 
 ## Installation
 ```
