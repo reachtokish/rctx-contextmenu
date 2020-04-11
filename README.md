@@ -1,7 +1,7 @@
 # rctx-contextmenu
 Context menu for React
 
-## `<ContextMenu />`
+### `<ContextMenu />`
 <table class="table table-bordered table-striped">
   <thead>
   <tr>
@@ -14,14 +14,14 @@ Context menu for React
   <tbody>
     <tr>
       <td>appendTo</td>
-      <td>Valid DOM</td>
-      <td>Should be a valid DOM element. Default: Enclosed element</td>
+      <td>Element</td>
+      <td>Should be a valid DOM element. <strong>Default: Enclosed element</strong></td>
       <td>Append context menu inside the passed element</td>
     </tr>
   </tbody>
 </table>
 
-## `<ContextMenuItem />`
+### `<ContextMenuItem />`
 <table class="table table-bordered table-striped">
   <thead>
   <tr>
