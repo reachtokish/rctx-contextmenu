@@ -1,6 +1,32 @@
+![NPM Badge](https://badge.fury.io/js/rctx-contextmenu.svg)
+
 # rctx-contextmenu
 Context menu for React
 
+## Installation
+```
+npm install --save rctx-contextmenu
+```
+
+## Sample Usage
+```html
+<ContextMenuTrigger
+  id="my-context-menu-1"
+>
+  <div className="box">
+    Right Click On Me
+  </div>
+</ContextMenuTrigger>
+
+<ContextMenu id="my-context-menu-1">
+  <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
+  <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
+  <ContextMenuItem>Basic Menu Item 3</ContextMenuItem>
+  <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
+</ContextMenu>
+```
+
+## Options
 ### `<ContextMenu />`
 <table class="table table-bordered table-striped">
   <thead>
@@ -114,6 +140,9 @@ Context menu for React
     </tr>
   </tbody>
 </table>
+
+## License
+MIT License
 
 <!-- ## `<SubMenu />` -->
 
