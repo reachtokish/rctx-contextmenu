@@ -18,25 +18,55 @@ Context menu for React
       <td>Should be a valid DOM element. <strong>Default: Enclosed element</strong></td>
       <td>Append context menu inside the passed element</td>
     </tr>
+    <tr>
+      <td>hideOnLeave</td>
+      <td>Boolean</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>Hide contextmenu on blur or mouseOut.</td>
+    </tr>
+    <tr>
+      <td>onMouseLeave</td>
+      <td>Function</td>
+      <td>`() => {}`</td>
+      <td>Invoke onMouseLeave on blur or mouseOut.</td>
+    </tr>
+    <tr>
+      <td>preventHideOnResize</td>
+      <td>Boolean</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>Prevent hiding contextmenu from hiding on window resize.</td>
+    </tr>
+    <tr>
+      <td>preventHideOnScroll</td>
+      <td>Boolean</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>Prevent hiding contextmenu from hiding on scroll.</td>
+    </tr>
+    <tr>
+      <td>disableIfShiftIsPressed</td>
+      <td>Boolean</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>Open browser default contextmenu if shift pressed while right click on trigger element.</td>
+    </tr>
   </tbody>
 </table>
 
 ### `<ContextMenuItem />`
 <table class="table table-bordered table-striped">
   <thead>
-  <tr>
-    <th style="width: 60px;">Name</th>
-    <th style="width: 50px;">Type</th>
-    <th style="width: 10px;">Options</th>
-    <th>Description</th>
-  </tr>
+    <tr>
+      <th style="width: 60px;">Name</th>
+      <th style="width: 50px;">Type</th>
+      <th style="width: 10px;">Options</th>
+      <th>Description</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
       <td>onClick</td>
       <td>Function</td>
-      <td>`() => {}`</td>
-      <td>Fire onClick event</td>
+      <td>() => {}</td>
+      <td>Fire onClick event.</td>
     </tr>
     <tr>
       <td>disabled</td>
@@ -60,13 +90,33 @@ Context menu for React
 </table>
 
 ## `<ContextMenuTrigger />`
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="width: 60px;">Name</th>
+      <th style="width: 50px;">Type</th>
+      <th style="width: 10px;">Options</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>attributes</td>
+      <td>Object</td>
+      <td>{}</td>
+      <td>Add addition props.</td>
+    </tr>
+    <tr>
+      <td>disable</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>false</td>
+      <td>Disable contextmenu and open browser default contextmenu.</td>
+    </tr>
+  </tbody>
+</table>
 
-## `<SubMenu />`
+<!-- ## `<SubMenu />` -->
 
-hideOnLeave, onMouseLeave, preventHideOnResize, preventHideOnScroll, disableIfShiftIsPressed
+<!-- onHide, onShow, preventHideOnContextMenu, className, programmatically hide show, animation - Not Done -->
 
-ContextMenuTrigger - attributes, disable
-
-onHide, onShow, preventHideOnContextMenu, className, programmatically hide show, animation - Not Done
-
-ContextMenuTrigger - collect, holdToDisplay - Not Done
+<!-- ContextMenuTrigger - collect, holdToDisplay - Not Done -->
