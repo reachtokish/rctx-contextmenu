@@ -1,22 +1,14 @@
 import React, { useCallback } from 'react';
-import { trigger, MENU_HIDE } from './trigger';
+import { callHideEvent } from './registerEvent';
 
 function ContextMenuItem({
-  children, onClick, disabled, preventClose, attributes, id
+  children, onClick, disabled, preventClose, attributes
 }) {
   const handleClickEvent = useCallback(e => {
     if (disabled) return;
     onClick(e);
 
-    if (!preventClose) {
-      const opts = {
-        position: null,
-        targetElem: null,
-        id
-      };
-
-      trigger(MENU_HIDE, opts);
-    }
+    if (!preventClose) callHideEvent();
   });
 
   return (
@@ -33,8 +25,8 @@ function ContextMenuItem({
 export default ContextMenuItem;
 
 ContextMenuItem.defaultProps = {
-  onClick: () => null,
   disabled: false,
   preventClose: false,
-  attributes: {}
+  attributes: {},
+  onClick: () => null
 };

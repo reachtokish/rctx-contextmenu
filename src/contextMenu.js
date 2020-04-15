@@ -1,65 +1,49 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, {
+  useRef, useEffect, useState, useCallback
+} from 'react';
 import ReactDOM from 'react-dom';
-import { throttle } from 'lodash';
-import { registerCallback } from './registerEvent';
-import { trigger, MENU_HIDE } from './trigger';
+// import { debounce } from 'lodash';
+import { registerEvent, callHideEvent } from './registerEvent';
+import { debounce } from './helper';
 
 function ContextMenu({
-  children, id, appendTo, hideOnLeave, onMouseLeave, preventHideOnResize, preventHideOnScroll
+  children, id, appendTo, hideOnLeave, onMouseLeave, onHide, onShow, preventHideOnScroll,
+  preventHideOnResize
 }) {
   const contextMenuEl = useRef(null);
-
-  const handleMouseLeave = useCallback(e => {
-    onMouseLeave(e);
-
-    if (hideOnLeave) {
-      const opts = {
-        position: null,
-        targetElem: null,
-        id
-      };
-
-      trigger(MENU_HIDE, opts);
-    }
-  });
+  const [isVisible, setVisible] = useState(false);
 
   const showMenu = e => {
-    const { detail: { position: { clientX, clientY }, id: triggerId } } = e;
+    const { position: { clientX, clientY } } = e;
 
-    contextMenuEl.current.style.display = 'none';
-    if (triggerId === id) {
-      contextMenuEl.current.style.display = 'block';
-      contextMenuEl.current.style.top = `${clientY + 2}px`;
-      contextMenuEl.current.style.left = `${clientX + 2}px`;
-    }
+    setVisible(true);
+    contextMenuEl.current.style.top = `${clientY + 2}px`;
+    contextMenuEl.current.style.left = `${clientX + 2}px`;
+
+    if (onShow) onShow();
   };
 
   const hideMenu = () => {
-    contextMenuEl.current.style.display = 'none';
+    setVisible(false);
+    if (onHide) onHide();
   };
 
-  registerCallback(showMenu, hideMenu);
+  const handleMouseLeave = useCallback(e => {
+    e.preventDefault();
+
+    onMouseLeave(e);
+
+    if (hideOnLeave) callHideEvent();
+  });
 
   useEffect(() => {
+    registerEvent(id, showMenu, hideMenu);
+
     // detect click outside
-    document.addEventListener('click', evt => {
-      let targetElement = evt.target;
-
-      do {
-        if (targetElement === contextMenuEl.current) {
-          return;
-        }
-        targetElement = targetElement.parentNode;
+    document.addEventListener('mousedown', event => {
+      if (contextMenuEl.current && !contextMenuEl.current.contains(event.target)) {
+        callHideEvent();
       }
-      while (targetElement);
-
-      const opts = {
-        position: null,
-        targetElem: null,
-        id
-      };
-
-      trigger(MENU_HIDE, opts);
     });
 
     // detect right click outside
@@ -74,64 +58,41 @@ function ContextMenu({
       }
       while (targetElement);
 
-      const opts = {
-        position: null,
-        targetElem: null,
-        id
-      };
-
-      trigger(MENU_HIDE, opts);
+      callHideEvent();
     });
 
-    // hide on scroll
+    // on scroll hide handled
     if (!preventHideOnScroll) {
-      window.addEventListener('scroll', throttle(() => {
-        const opts = {
-          position: null,
-          targetElem: null,
-          id
-        };
-
-        trigger(MENU_HIDE, opts);
-      }, 1000, {
-        leading: true
-      }));
+      window.addEventListener('scroll', debounce(() => {
+        callHideEvent();
+      }, 100, true));
     }
 
-    // hide on resize
+    // on resize hide handled
     if (!preventHideOnResize) {
-      window.addEventListener('resize', throttle(() => {
-        const opts = {
-          position: null,
-          targetElem: null,
-          id
-        };
-
-        trigger(MENU_HIDE, opts);
+      window.addEventListener('resize', debounce(() => {
+        callHideEvent();
       }, 1000, {
         leading: true
       }));
     }
-
-    return () => {
-      document.removeEventListener('click');
-      document.removeEventListener('contextmenu');
-      window.removeEventListener('scroll');
-      window.removeEventListener('resize');
-    };
-  });
+  }, []);
 
   const childrenWithProps = React.Children
     .map(children, child => React.cloneElement(child, { id }));
 
   const Component = () => (
-    <div
-      className="contextmenu"
-      ref={contextMenuEl}
-      onMouseLeave={handleMouseLeave}
-    >
-      {childrenWithProps}
-    </div>
+    <>
+      {isVisible && (
+        <div
+          className="contextmenu"
+          ref={contextMenuEl}
+          onMouseLeave={handleMouseLeave}
+        >
+          {childrenWithProps}
+        </div>
+      )}
+    </>
   );
 
   if (appendTo) {
@@ -152,5 +113,6 @@ ContextMenu.defaultProps = {
   preventHideOnResize: false,
   preventHideOnScroll: false,
   onMouseLeave: () => null,
-  onHide: () => null
+  onHide: () => null,
+  onShow: () => null
 };

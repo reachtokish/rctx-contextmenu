@@ -11,16 +11,21 @@ function Basic() {
       </h2>
       <ContextMenuTrigger
         id="my-context-menu-1"
+        attributes={{'aria-label': 'abc'}}
       >
         <div className="box">
           Right Click On Me
         </div>
       </ContextMenuTrigger>
 
-      <ContextMenu id="my-context-menu-1">
-        <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
-        <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
-        <ContextMenuItem>Basic Menu Item 3</ContextMenuItem>
+      <ContextMenu
+        id="my-context-menu-1"
+        onHide={() => console.log('On Hidden Called')}
+        onShow={() => console.log('On Shown Called')}
+      >
+        <ContextMenuItem onClick={() => console.log('Hidden')}>Basic Menu Item 1</ContextMenuItem>
+        <ContextMenuItem disabled={true}>Basic Menu Item 2</ContextMenuItem>
+        <ContextMenuItem preventClose={true}>Basic Menu Item 3</ContextMenuItem>
         <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
       </ContextMenu>
     </div>

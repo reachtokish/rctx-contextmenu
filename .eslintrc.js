@@ -33,6 +33,7 @@ module.exports = {
         "jsx-a11y/no-static-element-interactions": [0],
         "react/jsx-props-no-spreading": [0],
         "no-restricted-syntax": [0],
-        "guard-for-in": [0]
+        "guard-for-in": [0],
+        "import/prefer-default-export": [0]
     }
 };

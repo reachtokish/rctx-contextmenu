@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Basic, AppendTo, DisableMenuItem, PreventCloseItemClick } from 'example/src/components';
+import { Basic, AppendTo, DisableMenuItem, PreventCloseItemClick, HideOnLeave } from 'example/src/components';
 
 import './style.scss';
 
@@ -46,17 +46,20 @@ const Demo = () => {
               <AppendTo />
             </div>
 
-            <div className="content__section" id="disableMenuItem">
+            <div className="content__section" id="appendTo">
+              <HideOnLeave />
+            </div>
+
+            {/* <div className="content__section" id="disableMenuItem">
               <DisableMenuItem />
             </div>
 
             <div className="content__section" id="preventCloseItemClick">
               <PreventCloseItemClick />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
-      <div id="append_class" />
     </div>
   )
 };

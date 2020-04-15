@@ -1,26 +1,14 @@
-import uniqueId from './helper';
+import { uniqueId } from './helper';
 
-const callbacks = {};
+const events = {};
 
-const handleShowEvent = e => {
-  for (const id in callbacks) {
-    callbacks[id].showMenu(e);
-  }
-};
+let activeEvent = {};
 
-const handleHideEvent = e => {
-  for (const id in callbacks) {
-    callbacks[id].hideMenu(e);
-  }
-};
+const registerEvent = (id, showMenu, hideMenu) => {
+  const _ = uniqueId();
 
-window.addEventListener('MENU_SHOW', handleShowEvent);
-window.addEventListener('MENU_HIDE', handleHideEvent);
-
-const registerCallback = (showMenu, hideMenu) => {
-  const id = uniqueId();
-
-  callbacks[id] = {
+  events[_] = {
+    id,
     showMenu,
     hideMenu
   };
@@ -28,6 +16,19 @@ const registerCallback = (showMenu, hideMenu) => {
   return id;
 };
 
-const returnCallback = () => callbacks;
+const callShowEvent = opts => {
+  if (activeEvent.hideMenu) activeEvent.hideMenu();
+  Object.keys(events).forEach(key => {
+    if (events[key].id && events[key].id === opts.id) {
+      events[key].showMenu(opts);
+      activeEvent = events[key];
+    }
+  });
+};
 
-export { registerCallback, returnCallback };
+const callHideEvent = () => {
+  if (activeEvent.hideMenu) activeEvent.hideMenu();
+  activeEvent = {};
+};
+
+export { registerEvent, callShowEvent, callHideEvent };

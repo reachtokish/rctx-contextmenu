@@ -1,46 +1,46 @@
-import React, { useEffect, useRef } from 'react';
-import { MENU_SHOW, trigger } from './trigger';
+import React, { useRef, useEffect } from 'react';
+import { callShowEvent, callHideEvent } from './registerEvent';
 
 function ContextMenuTrigger({
-  children, id, attributes, disable, renderTag, disableIfShiftIsPressed
+  children, id, disableIfShiftIsPressed, attributes
 }) {
   const menuTrigger = useRef(null);
 
   useEffect(() => {
-    if (!disable) {
-      menuTrigger.current.addEventListener('contextmenu', e => {
-        e.preventDefault();
+    menuTrigger.current.addEventListener('contextmenu', e => {
+      // disableIfShiftIsPressed handled here
+      if (disableIfShiftIsPressed && e.shiftKey) {
+        callHideEvent();
+        return;
+      }
+      e.preventDefault();
 
-        const { clientX, clientY } = e;
+      const { clientX, clientY } = e;
+      const opts = {
+        position: {
+          clientY,
+          clientX
+        },
+        targetElem: e.target,
+        id
+      };
 
-        if (disableIfShiftIsPressed && e.shiftKey) return;
-
-        const opts = {
-          position: {
-            clientY,
-            clientX
-          },
-          targetElem: e.target,
-          id
-        };
-
-        trigger(MENU_SHOW, opts);
-      }, false);
-    }
+      callShowEvent(opts);
+    }, false);
 
     return () => {
       menuTrigger.current.removeEventListener('contextmenu');
     };
   }, []);
 
-  return React.createElement(
-    renderTag,
-    {
-      className: 'menu-trigger',
-      ref: menuTrigger,
-      ...attributes
-    },
-    children
+  return (
+    <div
+      className="menu-trigger"
+      ref={menuTrigger}
+      {...attributes}
+    >
+      {children}
+    </div>
   );
 }
 
