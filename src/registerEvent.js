@@ -4,7 +4,7 @@ const events = {};
 
 let activeEvent = {};
 
-const registerCallback = (id, showMenu, hideMenu) => {
+const registerEvent = (id, showMenu, hideMenu) => {
   const _ = uniqueId();
 
   events[_] = {
@@ -16,7 +16,7 @@ const registerCallback = (id, showMenu, hideMenu) => {
   return id;
 };
 
-const takeAction = opts => {
+const callShowEvent = opts => {
   if (activeEvent.hideMenu) activeEvent.hideMenu();
   Object.keys(events).forEach(key => {
     if (events[key].id && events[key].id === opts.id) {
@@ -26,9 +26,9 @@ const takeAction = opts => {
   });
 };
 
-const hideCallback = () => {
+const callHideEvent = () => {
   if (activeEvent.hideMenu) activeEvent.hideMenu();
   activeEvent = {};
 };
 
-export { registerCallback, takeAction, hideCallback };
+export { registerEvent, callShowEvent, callHideEvent };

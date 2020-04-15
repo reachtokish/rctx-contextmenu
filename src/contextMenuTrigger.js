@@ -1,13 +1,18 @@
 import React, { useRef, useEffect } from 'react';
-import { takeAction } from './registerEvent';
+import { callShowEvent, callHideEvent } from './registerEvent';
 
 function ContextMenuTrigger({
-  children, id
+  children, id, disableIfShiftIsPressed, attributes
 }) {
   const menuTrigger = useRef(null);
 
   useEffect(() => {
     menuTrigger.current.addEventListener('contextmenu', e => {
+      // disableIfShiftIsPressed handled here
+      if (disableIfShiftIsPressed && e.shiftKey) {
+        callHideEvent();
+        return;
+      }
       e.preventDefault();
 
       const { clientX, clientY } = e;
@@ -20,7 +25,7 @@ function ContextMenuTrigger({
         id
       };
 
-      takeAction(opts);
+      callShowEvent(opts);
     }, false);
 
     return () => {
@@ -32,6 +37,7 @@ function ContextMenuTrigger({
     <div
       className="menu-trigger"
       ref={menuTrigger}
+      {...attributes}
     >
       {children}
     </div>
@@ -39,3 +45,10 @@ function ContextMenuTrigger({
 }
 
 export default ContextMenuTrigger;
+
+ContextMenuTrigger.defaultProps = {
+  attributes: {},
+  disable: false,
+  renderTag: 'div',
+  disableIfShiftIsPressed: false
+};

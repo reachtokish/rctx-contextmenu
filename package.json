@@ -1,6 +1,6 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Contextmenu for react",
   "repository": "reachtokish/rctx-contextmenu",
   "author": "reachtokish <patra.kishore65@gmail.com>",
@@ -23,7 +23,7 @@
     "lint": "eslint ./src"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",

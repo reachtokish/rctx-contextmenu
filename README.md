@@ -53,7 +53,7 @@ npm install --save rctx-contextmenu
     <tr>
       <td>onMouseLeave</td>
       <td>Function</td>
-      <td>`() => {}`</td>
+      <td>() => {}</td>
       <td>Invoke onMouseLeave on blur or mouseOut.</td>
     </tr>
     <tr>
@@ -67,12 +67,6 @@ npm install --save rctx-contextmenu
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>Prevent hiding contextmenu from hiding on scroll.</td>
-    </tr>
-    <tr>
-      <td>disableIfShiftIsPressed</td>
-      <td>Boolean</td>
-      <td>true / false. <strong>Default: false</strong></td>
-      <td>Open browser default contextmenu if shift pressed while right click on trigger element.</td>
     </tr>
   </tbody>
 </table>
@@ -112,6 +106,12 @@ npm install --save rctx-contextmenu
       <td>Rest props</td>
       <td>-</td>
     </tr>
+    <tr>
+      <td>disableIfShiftIsPressed</td>
+      <td>Boolean</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>Open browser default contextmenu if shift pressed while right click on trigger element.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -144,8 +144,10 @@ npm install --save rctx-contextmenu
 ## License
 MIT License
 
+<!-- onHide, onShow -->
+
 <!-- ## `<SubMenu />` -->
 
-<!-- onHide, onShow, preventHideOnContextMenu, className, programmatically hide show, animation - Not Done -->
+<!-- , , preventHideOnContextMenu, className, programmatically hide show, animation - Not Done -->
 
 <!-- ContextMenuTrigger - collect, holdToDisplay - Not Done -->
