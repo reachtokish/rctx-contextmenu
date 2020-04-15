@@ -1,46 +1,27 @@
-import React, { useRef, useEffect, useCallback } from 'react';
-import ReactDOM from 'react-dom';
-import { throttle } from 'lodash';
-import { registerCallback } from './registerEvent';
-import { trigger, MENU_HIDE } from './trigger';
+import React, { useRef, useEffect, useState } from 'react';
+import { registerCallback, hideCallback } from './registerEvent';
 
 function ContextMenu({
-  children, id, appendTo, hideOnLeave, onMouseLeave, preventHideOnResize, preventHideOnScroll
+  children, id
 }) {
   const contextMenuEl = useRef(null);
-
-  const handleMouseLeave = useCallback(e => {
-    onMouseLeave(e);
-
-    if (hideOnLeave) {
-      const opts = {
-        position: null,
-        targetElem: null,
-        id
-      };
-
-      trigger(MENU_HIDE, opts);
-    }
-  });
+  const [isVisible, setVisible] = useState(false);
 
   const showMenu = e => {
-    const { detail: { position: { clientX, clientY }, id: triggerId } } = e;
+    const { position: { clientX, clientY } } = e;
 
-    contextMenuEl.current.style.display = 'none';
-    if (triggerId === id) {
-      contextMenuEl.current.style.display = 'block';
-      contextMenuEl.current.style.top = `${clientY + 2}px`;
-      contextMenuEl.current.style.left = `${clientX + 2}px`;
-    }
+    setVisible(true);
+    contextMenuEl.current.style.top = `${clientY + 2}px`;
+    contextMenuEl.current.style.left = `${clientX + 2}px`;
   };
 
   const hideMenu = () => {
-    contextMenuEl.current.style.display = 'none';
+    setVisible(false);
   };
 
-  registerCallback(showMenu, hideMenu);
-
   useEffect(() => {
+    registerCallback(id, showMenu, hideMenu);
+
     // detect click outside
     document.addEventListener('click', evt => {
       let targetElement = evt.target;
@@ -53,13 +34,7 @@ function ContextMenu({
       }
       while (targetElement);
 
-      const opts = {
-        position: null,
-        targetElem: null,
-        id
-      };
-
-      trigger(MENU_HIDE, opts);
+      hideCallback();
     });
 
     // detect right click outside
@@ -74,83 +49,22 @@ function ContextMenu({
       }
       while (targetElement);
 
-      const opts = {
-        position: null,
-        targetElem: null,
-        id
-      };
-
-      trigger(MENU_HIDE, opts);
+      hideCallback();
     });
+  }, []);
 
-    // hide on scroll
-    if (!preventHideOnScroll) {
-      window.addEventListener('scroll', throttle(() => {
-        const opts = {
-          position: null,
-          targetElem: null,
-          id
-        };
-
-        trigger(MENU_HIDE, opts);
-      }, 1000, {
-        leading: true
-      }));
-    }
-
-    // hide on resize
-    if (!preventHideOnResize) {
-      window.addEventListener('resize', throttle(() => {
-        const opts = {
-          position: null,
-          targetElem: null,
-          id
-        };
-
-        trigger(MENU_HIDE, opts);
-      }, 1000, {
-        leading: true
-      }));
-    }
-
-    return () => {
-      document.removeEventListener('click');
-      document.removeEventListener('contextmenu');
-      window.removeEventListener('scroll');
-      window.removeEventListener('resize');
-    };
-  });
-
-  const childrenWithProps = React.Children
-    .map(children, child => React.cloneElement(child, { id }));
-
-  const Component = () => (
-    <div
-      className="contextmenu"
-      ref={contextMenuEl}
-      onMouseLeave={handleMouseLeave}
-    >
-      {childrenWithProps}
-    </div>
+  return (
+    <>
+      {isVisible && (
+        <div
+          className="contextmenu"
+          ref={contextMenuEl}
+        >
+          {children}
+        </div>
+      )}
+    </>
   );
-
-  if (appendTo) {
-    return ReactDOM.createPortal(
-      <Component />,
-      appendTo
-    );
-  }
-
-  return <Component />;
 }
 
 export default ContextMenu;
-
-ContextMenu.defaultProps = {
-  appendTo: null,
-  hideOnLeave: false,
-  preventHideOnResize: false,
-  preventHideOnScroll: false,
-  onMouseLeave: () => null,
-  onHide: () => null
-};
