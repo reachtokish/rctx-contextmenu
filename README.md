@@ -8,7 +8,13 @@ Context menu plugin for React.
 There are lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
 
 ## The solution
-`rctx-contextmenu` gives that flexibility to customize Context Menu. You can add options, sub-options with exactly the look and feel how you get when you use the native Context Menu
+`rctx-contextmenu` gives that flexibility to customize Context Menu. You can add options, sub-options with exactly the look and feel how you get when you use the native Context Menu.
+
+## Key features
+- Append to body or root tag 🎉
+- Customize styling like however you want 👌
+- N level of Sub-Menu 👏
+- Long API list 💪
 
 ## Table of contents
 
@@ -17,6 +23,7 @@ There are lot of times when you want to customize the right click menu or Contex
 - [Live Demo](#live-demo)
 - [Example Code](#example-code)
 - [APIs](#apis)
+- [Styling](#styling)
 - [Contributions](#contributions)
 - [LICENSE](#license)
 
@@ -50,6 +57,32 @@ Live demo is available [here](https://reachtokish.github.io/rctx-contextmenu/).
 Example code is available [here](https://github.com/reachtokish/rctx-contextmenu/tree/master/example).
 
 ## APIs
+
+#### `<ContextMenuTrigger />`
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="width: 60px;">Name</th>
+      <th style="width: 50px;">Type</th>
+      <th style="width: 10px;">Options</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>attributes</td>
+      <td>Object</td>
+      <td>{}</td>
+      <td>Add addition props.</td>
+    </tr>
+    <tr>
+      <td>disable</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>false</td>
+      <td>Disable contextmenu and open browser default contextmenu.</td>
+    </tr>
+  </tbody>
+</table>
 
 #### `<ContextMenu />`
 <table class="table table-bordered table-striped">
@@ -91,6 +124,18 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>Prevent hiding contextmenu from hiding on scroll.</td>
+    </tr>
+    <tr>
+      <td>onShow</td>
+      <td>Function</td>
+      <td>() => {}</td>
+      <td>Trigger this event when Context Menu is visible.</td>
+    </tr>
+    <tr>
+      <td>onHide</td>
+      <td>Function</td>
+      <td>() => {}</td>
+      <td>Trigger this event when Context Menu is hidden.</td>
     </tr>
   </tbody>
 </table>
@@ -139,42 +184,17 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
   </tbody>
 </table>
 
-#### `<ContextMenuTrigger />`
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th style="width: 60px;">Name</th>
-      <th style="width: 50px;">Type</th>
-      <th style="width: 10px;">Options</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>attributes</td>
-      <td>Object</td>
-      <td>{}</td>
-      <td>Add addition props.</td>
-    </tr>
-    <tr>
-      <td>disable</td>
-      <td>true / false. <strong>Default: false</strong></td>
-      <td>false</td>
-      <td>Disable contextmenu and open browser default contextmenu.</td>
-    </tr>
-  </tbody>
-</table>
+## Styling
+Styling is totally up to you. You can use CSS or even SCSS to customize the styling part. Below are the classes you consider for styling
 
-## Contributions
+- menu-trigger (Right click area wrapper)
+- contextmenu (The Context Menu)
+- contextmenu__item (Each Context Menu item)
+- submenu (Context Submenu)
+- submenu__item (Context Submenu item)
+
+## Contributions 🙌
 Any kind of contribution would be much appreciated. It could be small change in the doc or even any kind of advice. You can create issues if you feel any feature which is missing which solves bigger problems.
 
 ## License
 MIT License
-
-<!-- onHide, onShow -->
-
-<!-- ## `<SubMenu />` -->
-
-<!-- , , preventHideOnContextMenu, className, programmatically hide show, animation - Not Done -->
-
-<!-- ContextMenuTrigger - collect, holdToDisplay - Not Done -->
