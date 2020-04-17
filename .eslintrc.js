@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
@@ -34,6 +35,7 @@ module.exports = {
         "react/jsx-props-no-spreading": [0],
         "no-restricted-syntax": [0],
         "guard-for-in": [0],
-        "import/prefer-default-export": [0]
+        "import/prefer-default-export": [0],
+        "import/no-extraneous-dependencies": [0]
     }
 };

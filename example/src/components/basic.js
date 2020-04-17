@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContextMenu, ContextMenuItem, ContextMenuTrigger } from 'src';
+import { ContextMenu, ContextMenuItem, ContextMenuTrigger, Submenu } from 'src';
 import linkIco from 'example/src/assets/images/link.svg';
 
 function Basic() {
@@ -27,6 +27,10 @@ function Basic() {
         <ContextMenuItem disabled={true}>Basic Menu Item 2</ContextMenuItem>
         <ContextMenuItem preventClose={true}>Basic Menu Item 3</ContextMenuItem>
         <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
+        <Submenu title="Abc">
+          <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
+          <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
+        </Submenu>
       </ContextMenu>
     </div>
   )

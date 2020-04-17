@@ -31,4 +31,6 @@ const callHideEvent = () => {
   activeEvent = {};
 };
 
-export { registerEvent, callShowEvent, callHideEvent };
+export {
+  registerEvent, callShowEvent, callHideEvent
+};

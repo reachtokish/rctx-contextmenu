@@ -10,6 +10,7 @@
   // display: none;
   background-color: #fff;
   padding: 5px 0;
+  z-index: 99;
   &__item {
     $item: &;
 

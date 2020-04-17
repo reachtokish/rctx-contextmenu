@@ -2,7 +2,6 @@ import React, {
   useRef, useEffect, useState, useCallback
 } from 'react';
 import ReactDOM from 'react-dom';
-// import { debounce } from 'lodash';
 import { registerEvent, callHideEvent } from './registerEvent';
 import { debounce } from './helper';
 
@@ -12,15 +11,13 @@ function ContextMenu({
 }) {
   const contextMenuEl = useRef(null);
   const [isVisible, setVisible] = useState(false);
+  const [clientPosition, setClientPosition] = useState(null);
 
   const showMenu = e => {
-    const { position: { clientX, clientY } } = e;
+    const { position } = e;
 
     setVisible(true);
-    contextMenuEl.current.style.top = `${clientY + 2}px`;
-    contextMenuEl.current.style.left = `${clientX + 2}px`;
-
-    if (onShow) onShow();
+    setClientPosition(position);
   };
 
   const hideMenu = () => {
@@ -77,6 +74,17 @@ function ContextMenu({
       }));
     }
   }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const { clientY, clientX } = clientPosition;
+
+      contextMenuEl.current.style.top = `${clientY + 2}px`;
+      contextMenuEl.current.style.left = `${clientX + 2}px`;
+
+      if (onShow) onShow();
+    }
+  }, [isVisible, clientPosition]);
 
   const childrenWithProps = React.Children
     .map(children, child => React.cloneElement(child, { id }));
