@@ -1,22 +1,22 @@
 ![NPM Badge](https://badge.fury.io/js/rctx-contextmenu.svg)
 
-# rctx-contextmenu
+# rctx-contextmenu 🔥
 Context menu plugin for React.
 [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
 
-## The problem
+## The problem :hushed:
 There are lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
 
-## The solution
+## The solution :smile:
 `rctx-contextmenu` gives that flexibility to customize Context Menu. You can add options, sub-options with exactly the look and feel how you get when you use the native Context Menu.
 
-## Key features
-- Append to body or root tag 🎉
-- Customize styling like however you want 👌
-- N level of Sub-Menu 👏
+## Key features :bulb:
+- Append to body or root tag :sparkler:
+- Customize styling like however you want :bouquet:
+- N level of Sub-Menu  :ok_woman:
 - Long API list 💪
 
-## Table of contents
+## Table of contents :pizza:
 
 - [Installation](#installation)
 - [Sample Usage](#sample-usage)
@@ -27,12 +27,14 @@ There are lot of times when you want to customize the right click menu or Contex
 - [Contributions](#contributions)
 - [LICENSE](#license)
 
-## Installation
+## Installation :heavy_check_mark:
+
 ```
 npm install --save rctx-contextmenu
 ```
 
-## Sample Usage
+## Sample Usage :rocket:
+
 ```html
 <ContextMenuTrigger
   id="my-context-menu-1"
@@ -50,13 +52,13 @@ npm install --save rctx-contextmenu
 </ContextMenu>
 ```
 
-## Live Demo
+## Live Demo :saxophone:
 Live demo is available [here](https://reachtokish.github.io/rctx-contextmenu/).
 
-## Example Code
+## Example Code :book:
 Example code is available [here](https://github.com/reachtokish/rctx-contextmenu/tree/master/example).
 
-## APIs
+## APIs :evergreen_tree:
 
 #### `<ContextMenuTrigger />`
 <table class="table table-bordered table-striped">
@@ -184,7 +186,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
   </tbody>
 </table>
 
-## Styling
+## Styling :ear_of_rice:
 Styling is totally up to you. You can use CSS or even SCSS to customize the styling part. Below are the classes you consider for styling
 
 - menu-trigger (Right click area wrapper)
@@ -193,8 +195,8 @@ Styling is totally up to you. You can use CSS or even SCSS to customize the styl
 - submenu (Context Submenu)
 - submenu__item (Context Submenu item)
 
-## Contributions 🙌
+## Contributions :pray:
 Any kind of contribution would be much appreciated. It could be small change in the doc or even any kind of advice. You can create issues if you feel any feature which is missing which solves bigger problems.
 
-## License
+## License :triangular_flag_on_post:
 MIT License
