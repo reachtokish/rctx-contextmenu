@@ -189,11 +189,11 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 ## Styling :ear_of_rice:
 Styling is totally up to you. You can use CSS or even SCSS to customize the styling part. Below are the classes you consider for styling
 
-- menu-trigger (Right click area wrapper)
-- contextmenu (The Context Menu)
-- contextmenu__item (Each Context Menu item)
-- submenu (Context Submenu)
-- submenu__item (Context Submenu item)
+- **menu-trigger** (Right click area wrapper)
+- **contextmenu** (The Context Menu)
+- **contextmenu__item** (Each Context Menu item)
+- **submenu** (Context Submenu)
+- **submenu__item** (Context Submenu item)
 
 ## Contributions :pray:
 Any kind of contribution would be much appreciated. It could be small change in the doc or even any kind of advice. You can create issues if you feel any feature which is missing which solves bigger problems.
