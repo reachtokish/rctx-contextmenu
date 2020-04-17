@@ -60,32 +60,6 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 
 ## APIs :evergreen_tree:
 
-#### `<ContextMenuTrigger />`
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th style="width: 60px;">Name</th>
-      <th style="width: 50px;">Type</th>
-      <th style="width: 10px;">Options</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>attributes</td>
-      <td>Object</td>
-      <td>{}</td>
-      <td>Add addition props.</td>
-    </tr>
-    <tr>
-      <td>disable</td>
-      <td>true / false. <strong>Default: false</strong></td>
-      <td>false</td>
-      <td>Disable contextmenu and open browser default contextmenu.</td>
-    </tr>
-  </tbody>
-</table>
-
 #### `<ContextMenu />`
 <table class="table table-bordered table-striped">
   <thead>
@@ -186,8 +160,34 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
   </tbody>
 </table>
 
+#### `<ContextMenuTrigger />`
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th style="width: 60px;">Name</th>
+      <th style="width: 50px;">Type</th>
+      <th style="width: 10px;">Options</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>attributes</td>
+      <td>Object</td>
+      <td>{}</td>
+      <td>Add addition props.</td>
+    </tr>
+    <tr>
+      <td>disable</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>false</td>
+      <td>Disable contextmenu and open browser default contextmenu.</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Styling :ear_of_rice:
-Styling is totally up to you. You can use CSS or even SCSS to customize the styling part. Below are the classes you consider for styling
+Styling is totally up to you. You can use CSS or even SCSS to customize the styling part. Below are the classes you can consider for styling
 
 - **menu-trigger** (Right click area wrapper)
 - **contextmenu** (The Context Menu)
