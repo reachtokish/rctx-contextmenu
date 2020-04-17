@@ -5,7 +5,7 @@ Context menu plugin for React.
 [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
 
 ## The problem
-There are a lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
+There are lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
 
 ## The solution
 `rctx-contextmenu` gives that flexibility to customize Context Menu. You can add options, sub-options with exactly the look and feel how you get when you use the native Context Menu
@@ -50,7 +50,8 @@ Live demo is available [here](https://reachtokish.github.io/rctx-contextmenu/).
 Example code is available [here](https://github.com/reachtokish/rctx-contextmenu/tree/master/example).
 
 ## APIs
-### `<ContextMenu />`
+
+#### `<ContextMenu />`
 <table class="table table-bordered table-striped">
   <thead>
   <tr>
@@ -94,7 +95,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
   </tbody>
 </table>
 
-### `<ContextMenuItem />`
+#### `<ContextMenuItem />`
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -138,7 +139,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
   </tbody>
 </table>
 
-### `<ContextMenuTrigger />`
+#### `<ContextMenuTrigger />`
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -163,6 +164,9 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
     </tr>
   </tbody>
 </table>
+
+## Contributions
+Any kind of contribution would be much appreciated. It could be small change in the doc or even any kind of advice. You can create issues if you feel any feature which is missing which solves bigger problems.
 
 ## License
 MIT License
