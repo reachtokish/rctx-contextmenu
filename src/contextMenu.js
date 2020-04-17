@@ -78,9 +78,17 @@ function ContextMenu({
   useEffect(() => {
     if (isVisible) {
       const { clientY, clientX } = clientPosition;
+      const { innerHeight: windowInnerHeight, innerWidth: windowInnerWidth } = window;
+      const { offsetHeight: elemHeight, offsetWidth: elemWidth } = contextMenuEl.current;
 
-      contextMenuEl.current.style.top = `${clientY + 2}px`;
-      contextMenuEl.current.style.left = `${clientX + 2}px`;
+      let newClientY = clientY;
+      let newClientX = clientX;
+
+      if (windowInnerHeight < clientY + elemHeight) newClientY = clientY - elemHeight;
+      if (windowInnerWidth < clientX + elemWidth) newClientX = clientX - elemWidth;
+
+      contextMenuEl.current.style.top = `${newClientY + 2}px`;
+      contextMenuEl.current.style.left = `${newClientX + 2}px`;
 
       if (onShow) onShow();
     }

@@ -21,7 +21,6 @@ function HideOnLeave() {
       <ContextMenu
         id="my-context-menu-3"
         hideOnLeave={true}
-        onMouseLeave={() => console.log('Mouse leave event fired')}
       >
         <ContextMenuItem>Hide Menu Item 1</ContextMenuItem>
         <ContextMenuItem>Hide Menu Item 2</ContextMenuItem>

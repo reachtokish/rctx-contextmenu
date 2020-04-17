@@ -37,9 +37,9 @@
 
     position: relative;
     &:hover {
-      & > #{$submenu}__item {
-        display: block;
-      }
+      // & > #{$submenu}__item {
+      //   display: block;
+      // }
       & > #{$contextmenu}__item {
         background-color: #333;
         color: #fff;
@@ -57,7 +57,7 @@
       background-color: #fff;
       border-radius: 4px;
       padding: 5px 0;
-      display: none;
+      opacity: 0;
     }
     & > #{$contextmenu}__item {
       &:after {

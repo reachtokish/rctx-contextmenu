@@ -1,7 +1,24 @@
 ![NPM Badge](https://badge.fury.io/js/rctx-contextmenu.svg)
 
 # rctx-contextmenu
-Context menu for React. [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
+Context menu plugin for React.
+[Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
+
+## The problem
+There are a lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
+
+## The solution
+`rctx-contextmenu` gives that flexibility to customize Context Menu. You can add options, sub-options with exactly the look and feel how you get when you use the native Context Menu
+
+## Table of contents
+
+- [Installation](#installation)
+- [Sample Usage](#sample-usage)
+- [Live Demo](#live-demo)
+- [Example Code](#example-code)
+- [APIs](#apis)
+- [Contributions](#contributions)
+- [LICENSE](#license)
 
 ## Installation
 ```
@@ -26,7 +43,13 @@ npm install --save rctx-contextmenu
 </ContextMenu>
 ```
 
-## Options
+## Live Demo
+Live demo is available [here](https://reachtokish.github.io/rctx-contextmenu/).
+
+## Example Code
+Example code is available [here](https://github.com/reachtokish/rctx-contextmenu/tree/master/example).
+
+## APIs
 ### `<ContextMenu />`
 <table class="table table-bordered table-striped">
   <thead>

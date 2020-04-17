@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { callHideEvent } from './registerEvent';
 
 function ContextMenuItem({
-  children, onClick, disabled, preventClose, attributes
+  children, onClick, disabled, preventClose, attributes, onItemHover, onItemHoverOut
 }) {
+  const contextMenuItem = useRef(null);
+
   const handleClickEvent = useCallback(e => {
     if (disabled) return;
     onClick(e);
@@ -16,6 +18,7 @@ function ContextMenuItem({
       className={`contextmenu__item${disabled ? ' contextmenu__item--disabled' : ''}`}
       onClick={handleClickEvent}
       {...attributes}
+      ref={contextMenuItem}
     >
       {children}
     </div>
@@ -28,5 +31,6 @@ ContextMenuItem.defaultProps = {
   disabled: false,
   preventClose: false,
   attributes: {},
-  onClick: () => null
+  onClick: () => null,
+  onItemHover: () => null
 };
