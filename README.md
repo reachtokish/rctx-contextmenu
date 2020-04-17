@@ -13,7 +13,7 @@ There are lot of times when you want to customize the right click menu or Contex
 ## Key features :bulb:
 - Append to body or root tag :sparkler:
 - Customize styling like however you want :bouquet:
-- N level of Sub-Menu  :ok_woman:
+- N level of Sub-Menu :ok_woman:
 - Long API list 💪
 
 ## Table of contents :pizza:
