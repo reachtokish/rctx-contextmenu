@@ -20,6 +20,7 @@ function Basic() {
 
       <ContextMenu
         id="my-context-menu-1"
+        appendTo={document.querySelector('body')}
       >
         <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
         <ContextMenuItem disabled={true}>Basic Menu Item 2</ContextMenuItem>

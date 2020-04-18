@@ -7,8 +7,12 @@ Context menu plugin for React.
 ## The problem :hushed:
 There are lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
 
+<!-- --------------------------------------------------- -->
+
 ## The solution :smile:
 `rctx-contextmenu` gives that flexibility to customize Context Menu. You can add options, sub-options with exactly the look and feel how you get when you use the native Context Menu.
+
+<!-- --------------------------------------------------- -->
 
 ## Key features :bulb:
 - Append to body or root tag :sparkler:
@@ -16,25 +20,28 @@ There are lot of times when you want to customize the right click menu or Contex
 - N level of Sub-Menu :scream:
 - Extensive list of APIs 💪
 
-## Table of contents :pizza:
+<!-- --------------------------------------------------- -->
 
-- [Installation](#installation)
-- [Sample Usage](#sample-usage)
-- [Live Demo](#live-demo)
-- [Example Code](#example-code)
-- [APIs](#apis)
-- [Styling](#styling)
-- [Contributions](#contributions)
-- [LICENSE](#license)
+## Table of contents :pizza:
+- [Installation](#installation-heavy_check_mark)
+- [Sample Usage](#sample-usage-rocket)
+- [Live Demo](#live-demo-saxophone)
+- [Example Code](#example-code-book)
+- [APIs](#apis-evergreen_tree)
+- [Styling](#styling-ear_of_rice)
+- [Contributions](#contributions-pray)
+- [LICENSE](#license-triangular_flag_on_post)
+
+<!-- --------------------------------------------------- -->
 
 ## Installation :heavy_check_mark:
-
 ```
 npm install --save rctx-contextmenu
 ```
 
-## Sample Usage :rocket:
+<!-- --------------------------------------------------- -->
 
+## Sample Usage :rocket:
 ```html
 <ContextMenuTrigger
   id="my-context-menu-1"
@@ -51,15 +58,55 @@ npm install --save rctx-contextmenu
   <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
 </ContextMenu>
 ```
+<!-- --------------------------------------------------- -->
+
+## Full example of APIs
+```html
+<ContextMenu
+  appendTo={document.querySelector('body')}
+  hideOnLeave={false}
+  preventHideOnResize={false}
+  preventHideOnScroll={false}
+  onMouseLeave={() => console.log('Mouse left')}
+  onShow={() => console.log('I am visible!')}
+  onHide={() => console.log('I am hidden!')}
+/>
+```
+
+```jsx
+<ContextMenuItem
+  disabled={true}
+  preventClose={false}
+  attributes={{
+    'aria-label': 'Some text'
+    'aria-labelledby': 'Some text'
+  }}
+  disableIfShiftIsPressed={true}
+  onClick={() => console.log("I'm clicked!")}
+/>
+```
+
+```jsx
+<ContextMenuTrigger
+  attributes={{
+    'aria-label': 'Some text'
+    'aria-labelledby': 'Some text'
+  }}
+  disable={false}
+/>
+```
 
 ## Live Demo :saxophone:
 Live demo is available [here](https://reachtokish.github.io/rctx-contextmenu/).
 
+<!-- --------------------------------------------------- -->
+
 ## Example Code :book:
 Example code is available [here](https://github.com/reachtokish/rctx-contextmenu/tree/master/example).
 
-## APIs :evergreen_tree:
+<!-- --------------------------------------------------- -->
 
+## APIs :evergreen_tree:
 #### `<ContextMenu />`
 <table class="table table-bordered table-striped">
   <thead>
@@ -186,6 +233,8 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
   </tbody>
 </table>
 
+<!-- --------------------------------------------------- -->
+
 ## Styling :ear_of_rice:
 Styling is totally up to you. You can use CSS or even SCSS to customize the styling part. Below are the classes you can consider for styling
 
@@ -195,8 +244,12 @@ Styling is totally up to you. You can use CSS or even SCSS to customize the styl
 - **submenu** (Context Submenu)
 - **submenu__item** (Context Submenu item)
 
+<!-- --------------------------------------------------- -->
+
 ## Contributions :pray:
 Any kind of contribution would be much appreciated. It could be small change in the doc or even any kind of advice. You can create issues if you feel any feature which is missing which solves bigger problems.
+
+<!-- --------------------------------------------------- -->
 
 ## License :triangular_flag_on_post:
 MIT License
