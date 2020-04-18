@@ -130,10 +130,10 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 <table class="table table-bordered table-striped">
   <thead>
   <tr>
-    <th style="width: 60px;">Name</th>
-    <th style="width: 50px;">Type</th>
-    <th style="width: 10px;">Options</th>
-    <th>Description</th>
+    <th width="10%">Name</th>
+    <th width="5%">Type</th>
+    <th width="30%">Options</th>
+    <th width="55%">Description</th>
   </tr>
   </thead>
   <tbody>
@@ -143,23 +143,11 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Should be a string.</td>
       <td>`ContextMenu` and `ContextMenuTrigger` id should match</td>
     </tr>
-    <!-- <tr>
-      <td>appendTo</td>
-      <td>Element</td>
-      <td>Should be a valid DOM element. <strong>Default: Enclosed element</strong></td>
-      <td>Append context menu inside the passed element</td>
-    </!-->
     <tr>
       <td>hideOnLeave</td>
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>Hide contextmenu on blur or mouseOut.</td>
-    </tr>
-    <tr>
-      <td>onMouseLeave</td>
-      <td>Function</td>
-      <td>() => {}</td>
-      <td>Invoke onMouseLeave on blur or mouseOut.</td>
     </tr>
     <tr>
       <td>preventHideOnResize</td>
@@ -185,6 +173,18 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>() => {}</td>
       <td>Trigger this event when Context Menu is hidden.</td>
     </tr>
+    <tr>
+      <td>onMouseLeave</td>
+      <td>Function</td>
+      <td>() => {}</td>
+      <td>Invoke onMouseLeave on blur or mouseOut.</td>
+    </tr>
+    <!-- <tr>
+      <td>appendTo</td>
+      <td>Element</td>
+      <td>Should be a valid DOM element. <strong>Default: Enclosed element</strong></td>
+      <td>Append context menu inside the passed element</td>
+    </!-->
   </tbody>
 </table>
 
@@ -192,19 +192,13 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th style="width: 60px;">Name</th>
-      <th style="width: 50px;">Type</th>
-      <th style="width: 10px;">Options</th>
-      <th>Description</th>
+      <th width="10%">Name</th>
+      <th width="5%">Type</th>
+      <th width="30%">Options</th>
+      <th width="55%">Description</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>onClick</td>
-      <td>Function</td>
-      <td>() => {}</td>
-      <td>Fire onClick event.</td>
-    </tr>
     <tr>
       <td>disabled</td>
       <td>Boolean</td>
@@ -218,16 +212,22 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Context menu is closed as soon as an item is clicked.</td>
     </tr>
     <tr>
+      <td>disableIfShiftIsPressed</td>
+      <td>Boolean</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>Open browser default contextmenu if shift pressed while right click on trigger element.</td>
+    </tr>
+    <tr>
       <td>attributes</td>
       <td>Object</td>
       <td>Rest props</td>
       <td>-</td>
     </tr>
     <tr>
-      <td>disableIfShiftIsPressed</td>
-      <td>Boolean</td>
-      <td>true / false. <strong>Default: false</strong></td>
-      <td>Open browser default contextmenu if shift pressed while right click on trigger element.</td>
+      <td>onClick</td>
+      <td>Function</td>
+      <td>() => {}</td>
+      <td>Fire onClick event.</td>
     </tr>
   </tbody>
 </table>
@@ -236,19 +236,19 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
+      <th width="10%">Name</th>
+      <th width="5%">Type</th>
+      <th width="30%">Options</th>
+      <th width="55%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>id</td>
       <td>String</td>
       <td>Should be a string.</td>
       <td>`ContextMenu` and `ContextMenuTrigger` id should match</td>
     </tr>
-    <tr>
-      <th style="width: 60px;">Name</th>
-      <th style="width: 50px;">Type</th>
-      <th style="width: 10px;">Options</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td>attributes</td>
       <td>Object</td>
@@ -267,6 +267,14 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 #### `<Submenu />`
 <table class="table table-bordered table-striped">
   <thead>
+    <tr>
+      <th width="10%">Name</th>
+      <th width="5%">Type</th>
+      <th width="30%">Options</th>
+      <th width="55%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>title</td>
       <td>String</td>
