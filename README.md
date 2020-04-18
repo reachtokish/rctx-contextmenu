@@ -25,6 +25,7 @@ There are lot of times when you want to customize the right click menu or Contex
 ## Table of contents :pizza:
 - [Installation](#installation-heavy_check_mark)
 - [Sample Usage](#sample-usage-rocket)
+- [Full Example Usage](#Full-example-usage-blue_heart)
 - [Live Demo](#live-demo-saxophone)
 - [Example Code](#example-code-book)
 - [APIs](#apis-evergreen_tree)
@@ -71,7 +72,7 @@ export default App;
 ```
 <!-- --------------------------------------------------- -->
 
-## Full example usage
+## Full example usage :blue_heart:
 ```jsx
 <ContextMenu
   id="my-contextmenu"
