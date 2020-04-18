@@ -30,6 +30,7 @@ There are lot of times when you want to customize the right click menu or Contex
 - [Example Code](#example-code-book)
 - [APIs](#apis-evergreen_tree)
 - [Styling](#styling-ear_of_rice)
+- [Upcoming Features](#Upcoming-Features-point_down)
 - [Contributions](#contributions-pray)
 - [LICENSE](#license-triangular_flag_on_post)
 
@@ -77,8 +78,6 @@ export default App;
 <ContextMenu
   id="my-contextmenu"
   hideOnLeave={false}
-  preventHideOnResize={false}
-  preventHideOnScroll={false}
   onMouseLeave={() => console.log('Mouse left')}
   onShow={() => console.log('I am visible!')}
   onHide={() => console.log('I am hidden!')}
@@ -149,7 +148,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>true / false. <strong>Default: false</strong></td>
       <td>Hide contextmenu on blur or mouseOut.</td>
     </tr>
-    <tr>
+    <!-- <tr>
       <td>preventHideOnResize</td>
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
@@ -160,7 +159,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>Prevent hiding contextmenu from hiding on scroll.</td>
-    </tr>
+    </tr> -->
     <tr>
       <td>onShow</td>
       <td>Function</td>
@@ -294,6 +293,13 @@ Styling is totally up to you. You can use CSS or even SCSS to customize the styl
 - **contextmenu__item** (Each Context Menu item)
 - **submenu** (Context Submenu)
 - **submenu__item** (Context Submenu item)
+
+<!-- --------------------------------------------------- -->
+
+## Upcoming Features on Priority :point_down:
+- Handle scroll hide ([#8](https://github.com/reachtokish/rctx-contextmenu/issues/8))
+- Handle resize hide ([#9](https://github.com/reachtokish/rctx-contextmenu/issues/9))
+- Append to required element ([#10](https://github.com/reachtokish/rctx-contextmenu/issues/10))
 
 <!-- --------------------------------------------------- -->
 
