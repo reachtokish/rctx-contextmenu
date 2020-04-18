@@ -58,10 +58,10 @@ function App() {
       </ContextMenuTrigger>
 
       <ContextMenu id="my-context-menu-1">
-        <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
-        <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
-        <ContextMenuItem>Basic Menu Item 3</ContextMenuItem>
-        <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
+        <ContextMenuItem>Menu Item 1</ContextMenuItem>
+        <ContextMenuItem>Menu Item 2</ContextMenuItem>
+        <ContextMenuItem>Menu Item 3</ContextMenuItem>
+        <ContextMenuItem>Menu Item 4</ContextMenuItem>
       </ContextMenu>
     </div>
   );
@@ -105,6 +105,12 @@ export default App;
     'aria-label': 'Some text'
     'aria-labelledby': 'Some text'
   }}
+/>
+```
+
+```jsx
+<Submenu
+  title="My submenu"
 />
 ```
 
@@ -253,6 +259,18 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>true / false. <strong>Default: false</strong></td>
       <td>false</td>
       <td>Disable contextmenu and open browser default contextmenu.</td>
+    </tr>
+  </tbody>
+</table>
+
+#### `<Submenu />`
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td>title</td>
+      <td>String</td>
+      <td>Should be a string.</td>
+      <td>Title for the Submenu</td>
     </tr>
   </tbody>
 </table>
