@@ -78,6 +78,11 @@ export default App;
 <ContextMenu
   id="my-contextmenu"
   hideOnLeave={false}
+  attributes={{
+    'aria-label': 'Some text',
+    'aria-labelledby': 'Some text'
+  }}
+  className="my-context-menu"
   onMouseLeave={() => console.log('Mouse left')}
   onShow={() => console.log('I am visible!')}
   onHide={() => console.log('I am hidden!')}
@@ -88,11 +93,11 @@ export default App;
 <ContextMenuItem
   disabled={true}
   preventClose={false}
-  disableWhileShiftPressed={true}
   attributes={{
-    'aria-label': 'Some text'
+    'aria-label': 'Some text',
     'aria-labelledby': 'Some text'
   }}
+  className="my-context-menu-item"
   onClick={() => console.log("I'm clicked!")}
 />
 ```
@@ -101,16 +106,23 @@ export default App;
 <ContextMenuTrigger
   id="my-contextmenu"
   disable={false}
+  disableWhileShiftPressed={true}
   attributes={{
-    'aria-label': 'Some text'
+    'aria-label': 'Some text',
     'aria-labelledby': 'Some text'
   }}
+  className="my-context-menu-trigger"
 />
 ```
 
 ```jsx
 <Submenu
   title="My submenu"
+  attributes={{
+    'aria-label': 'Some text',
+    'aria-labelledby': 'Some text'
+  }}
+  className="my-context-menu-submenu"
 />
 ```
 
@@ -140,13 +152,25 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>id</td>
       <td>String</td>
       <td>Should be a string.</td>
-      <td>`ContextMenu` and `ContextMenuTrigger` id should match</td>
+      <td>`ContextMenu` and `ContextMenuTrigger` id should match.</td>
     </tr>
     <tr>
       <td>hideOnLeave</td>
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>Hide contextmenu on blur or mouseOut.</td>
+    </tr>
+    <tr>
+      <td>attributes</td>
+      <td>Object</td>
+      <td>-</td>
+      <td>Add additional attributes to the element.</td>
+    </tr>
+    <tr>
+      <td>className</td>
+      <td>String</td>
+      <td>-</td>
+      <td>Additional classes.</td>
     </tr>
     <!-- <tr>
       <td>preventHideOnResize</td>
@@ -219,8 +243,14 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
     <tr>
       <td>attributes</td>
       <td>Object</td>
-      <td>Rest props</td>
       <td>-</td>
+      <td>Add additional attributes to the element.</td>
+    </tr>
+    <tr>
+      <td>className</td>
+      <td>String</td>
+      <td>-</td>
+      <td>Additional classes.</td>
     </tr>
     <tr>
       <td>onClick</td>
@@ -246,19 +276,25 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>id</td>
       <td>String</td>
       <td>Should be a string.</td>
-      <td>`ContextMenu` and `ContextMenuTrigger` id should match</td>
+      <td>`ContextMenu` and `ContextMenuTrigger` id should match.</td>
     </tr>
     <tr>
       <td>attributes</td>
       <td>Object</td>
-      <td>{}</td>
-      <td>Add addition props.</td>
+      <td>-</td>
+      <td>Add additional attributes to the element.</td>
     </tr>
     <tr>
       <td>disable</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>false</td>
       <td>Disable contextmenu and open browser default contextmenu.</td>
+    </tr>
+    <tr>
+      <td>className</td>
+      <td>String</td>
+      <td>-</td>
+      <td>Additional classes.</td>
     </tr>
   </tbody>
 </table>
@@ -278,7 +314,19 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>title</td>
       <td>String</td>
       <td>Should be a string.</td>
-      <td>Title for the Submenu</td>
+      <td>Title for the Submenu.</td>
+    </tr>
+    <tr>
+      <td>attributes</td>
+      <td>Object</td>
+      <td>-</td>
+      <td>Add additional attributes to the element.</td>
+    </tr>
+    <tr>
+      <td>className</td>
+      <td>String</td>
+      <td>-</td>
+      <td>Additional classes.</td>
     </tr>
   </tbody>
 </table>
@@ -291,6 +339,7 @@ Styling is totally up to you. You can use CSS or even SCSS to customize the styl
 - **menu-trigger** (Right click area wrapper)
 - **contextmenu** (The Context Menu)
 - **contextmenu__item** (Each Context Menu item)
+- **contextmenu__item--disabled** (Context Menu item)
 - **submenu** (Context Submenu)
 - **submenu__item** (Context Submenu item)
 

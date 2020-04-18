@@ -1,12 +1,15 @@
 import React, { useCallback, useState, useRef } from 'react';
+import classnames from 'classnames';
 import ContextMenuItem from './contextMenuItem';
 
-function Submenu({ children, title }) {
+function Submenu({
+  children, title, attributes, className
+}) {
   const [submenuStyle, setSubmenuStyle] = useState(null);
   const submenuEl = useRef(null);
   const submenuItem = useRef(null);
 
-  const calculateSubmenuPos = useCallback(e => {
+  const calculateSubmenuPos = useCallback(() => {
     const { innerHeight: windowInnerHeight, innerWidth: windowInnerWidth } = window;
     const {
       left: itemLeft, top: itemTop, width: itemWidth, height: itemHeight
@@ -46,17 +49,15 @@ function Submenu({ children, title }) {
 
   return (
     <div
-      className="submenu"
+      className={classnames('submenu', ...className.split(' '))}
       onMouseOver={() => calculateSubmenuPos()}
       onMouseOut={() => hideSubmenu()}
       onFocus={() => null}
       onBlur={() => null}
       ref={submenuItem}
+      {...attributes}
     >
-      <ContextMenuItem
-        // onItemHover={e => calculateSubmenuPos(e)}
-        // onItemHoverOut={() => hideSubmenu()}
-      >
+      <ContextMenuItem>
         {title}
       </ContextMenuItem>
       <div
@@ -73,5 +74,6 @@ function Submenu({ children, title }) {
 export default Submenu;
 
 Submenu.defaultProps = {
-  title: 'Sub Menu'
+  title: 'Sub Menu',
+  className: ''
 };

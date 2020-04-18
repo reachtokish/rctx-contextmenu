@@ -12,6 +12,8 @@ function Basic() {
       <ContextMenuTrigger
         id="my-context-menu-1"
         attributes={{'aria-label': 'abc'}}
+        disable={false}
+        className="abc"
       >
         <div className="box">
           Right Click On Me
@@ -20,20 +22,12 @@ function Basic() {
 
       <ContextMenu
         id="my-context-menu-1"
-        appendTo={document.querySelector('body')}
+        onHide={() => console.log('Hey')}
       >
         <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
-        <ContextMenuItem disabled={true}>Basic Menu Item 2</ContextMenuItem>
+        <ContextMenuItem disabled={true} className="abc">Basic Menu Item 2</ContextMenuItem>
         <ContextMenuItem preventClose={true}>Basic Menu Item 3</ContextMenuItem>
         <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
-        <Submenu title="Abc">
-          <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
-          <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
-          <Submenu title="Abc">
-            <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
-            <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
-          </Submenu>
-        </Submenu>
       </ContextMenu>
     </div>
   )

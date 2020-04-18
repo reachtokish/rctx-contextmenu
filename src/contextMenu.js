@@ -2,12 +2,13 @@ import React, {
   useRef, useEffect, useState, useCallback
 } from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
 import { registerEvent, callHideEvent } from './registerEvent';
 import { debounce } from './helper';
 
 function ContextMenu({
   children, id, appendTo, hideOnLeave, onMouseLeave, onHide, onShow, preventHideOnScroll,
-  preventHideOnResize
+  preventHideOnResize, attributes, className
 }) {
   const contextMenuEl = useRef(null);
   const [isVisible, setVisible] = useState(false);
@@ -101,9 +102,10 @@ function ContextMenu({
     <>
       {isVisible && (
         <div
-          className="contextmenu"
+          className={classnames('contextmenu', ...className.split(' '))}
           ref={contextMenuEl}
           onMouseLeave={handleMouseLeave}
+          {...attributes}
         >
           {childrenWithProps}
         </div>
@@ -128,6 +130,8 @@ ContextMenu.defaultProps = {
   hideOnLeave: false,
   preventHideOnResize: false,
   preventHideOnScroll: false,
+  attributes: {},
+  className: '',
   onMouseLeave: () => null,
   onHide: () => null,
   onShow: () => null
