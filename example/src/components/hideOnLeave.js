@@ -11,7 +11,7 @@ function HideOnLeave() {
       </h2>
       <ContextMenuTrigger
         id="my-context-menu-3"
-        disableIfShiftIsPressed={true}
+        disableWhileShiftPressed={true}
       >
         <div className="box">
           Right Click On Me

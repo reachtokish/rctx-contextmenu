@@ -88,7 +88,7 @@ export default App;
 <ContextMenuItem
   disabled={true}
   preventClose={false}
-  disableIfShiftIsPressed={true}
+  disableWhileShiftPressed={true}
   attributes={{
     'aria-label': 'Some text'
     'aria-labelledby': 'Some text'
@@ -211,7 +211,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Context menu is closed as soon as an item is clicked.</td>
     </tr>
     <tr>
-      <td>disableIfShiftIsPressed</td>
+      <td>disableWhileShiftPressed</td>
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>Open browser default contextmenu if shift pressed while right click on trigger element.</td>

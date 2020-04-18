@@ -2,38 +2,12 @@ import React, { useRef, useCallback } from 'react';
 import { callShowEvent, callHideEvent } from './registerEvent';
 
 function ContextMenuTrigger({
-  children, id, disableIfShiftIsPressed, attributes
+  children, id, disableWhileShiftPressed, attributes
 }) {
   const menuTrigger = useRef(null);
 
-  // useEffect(() => {
-  //   menuTrigger.current.addEventListener('contextmenu', e => {
-  //     // disableIfShiftIsPressed handled here
-  //     if (disableIfShiftIsPressed && e.shiftKey) {
-  //       callHideEvent();
-  //       return;
-  //     }
-  //     e.preventDefault();
-
-  //     const { clientX, clientY } = e;
-  //     const opts = {
-  //       position: {
-  //         clientY,
-  //         clientX
-  //       },
-  //       id
-  //     };
-
-  //     callShowEvent(opts);
-  //   }, false);
-
-  //   return () => {
-  //     menuTrigger.current.removeEventListener('contextmenu');
-  //   };
-  // }, []);
-
   const handleContextMenu = useCallback(e => {
-    if (disableIfShiftIsPressed && e.nativeEvent.shiftKey) {
+    if (disableWhileShiftPressed && e.nativeEvent.shiftKey) {
       callHideEvent();
       return;
     }
@@ -69,5 +43,5 @@ ContextMenuTrigger.defaultProps = {
   attributes: {},
   disable: false,
   renderTag: 'div',
-  disableIfShiftIsPressed: false
+  disableWhileShiftPressed: false
 };
