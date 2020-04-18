@@ -141,7 +141,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Element</td>
       <td>Should be a valid DOM element. <strong>Default: Enclosed element</strong></td>
       <td>Append context menu inside the passed element</td>
-    </!--> -->
+    </!-->
     <tr>
       <td>hideOnLeave</td>
       <td>Boolean</td>
