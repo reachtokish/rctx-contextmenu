@@ -15,7 +15,7 @@ There are lot of times when you want to customize the right click menu or Contex
 <!-- --------------------------------------------------- -->
 
 ## Key features :bulb:
-- Append to body or root tag :sparkler:
+<!-- - Append to body or root tag :sparkler: -->
 - Customize styling like however you want :bouquet:
 - N level of Sub-Menu :scream:
 - Extensive list of APIs 💪
@@ -42,28 +42,39 @@ npm install --save rctx-contextmenu
 <!-- --------------------------------------------------- -->
 
 ## Sample Usage :rocket:
-```html
-<ContextMenuTrigger
-  id="my-context-menu-1"
->
-  <div className="box">
-    Right Click On Me
-  </div>
-</ContextMenuTrigger>
+```jsx
+import React from 'react';
+import { ContextMenuTrigger, ContextMenu, ContextMenuItem } from 'rctx-contextmenu';
 
-<ContextMenu id="my-context-menu-1">
-  <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
-  <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
-  <ContextMenuItem>Basic Menu Item 3</ContextMenuItem>
-  <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
-</ContextMenu>
+function App() {
+  return (
+    <div className="app">
+      <ContextMenuTrigger
+        id="my-context-menu-1"
+      >
+        <div className="box">
+          Right Click On Me
+        </div>
+      </ContextMenuTrigger>
+
+      <ContextMenu id="my-context-menu-1">
+        <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 3</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
+      </ContextMenu>
+    </div>
+  );
+}
+
+export default App;
 ```
 <!-- --------------------------------------------------- -->
 
-## Full example of APIs
-```html
+## Full example usage
+```jsx
 <ContextMenu
-  appendTo={document.querySelector('body')}
+  id="my-contextmenu"
   hideOnLeave={false}
   preventHideOnResize={false}
   preventHideOnScroll={false}
@@ -77,22 +88,23 @@ npm install --save rctx-contextmenu
 <ContextMenuItem
   disabled={true}
   preventClose={false}
+  disableIfShiftIsPressed={true}
   attributes={{
     'aria-label': 'Some text'
     'aria-labelledby': 'Some text'
   }}
-  disableIfShiftIsPressed={true}
   onClick={() => console.log("I'm clicked!")}
 />
 ```
 
 ```jsx
 <ContextMenuTrigger
+  id="my-contextmenu"
+  disable={false}
   attributes={{
     'aria-label': 'Some text'
     'aria-labelledby': 'Some text'
   }}
-  disable={false}
 />
 ```
 
@@ -119,11 +131,17 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
   </thead>
   <tbody>
     <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Should be a string.</td>
+      <td>`ContextMenu` and `ContextMenuTrigger` id should match</td>
+    </tr>
+    <!-- <tr>
       <td>appendTo</td>
       <td>Element</td>
       <td>Should be a valid DOM element. <strong>Default: Enclosed element</strong></td>
       <td>Append context menu inside the passed element</td>
-    </tr>
+    </!--> -->
     <tr>
       <td>hideOnLeave</td>
       <td>Boolean</td>
@@ -210,6 +228,12 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 #### `<ContextMenuTrigger />`
 <table class="table table-bordered table-striped">
   <thead>
+    <tr>
+      <td>id</td>
+      <td>String</td>
+      <td>Should be a string.</td>
+      <td>`ContextMenu` and `ContextMenuTrigger` id should match</td>
+    </tr>
     <tr>
       <th style="width: 60px;">Name</th>
       <th style="width: 50px;">Type</th>
