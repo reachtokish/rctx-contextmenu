@@ -113,10 +113,10 @@ function ContextMenu({
     </>
   );
 
-  if (appendTo) {
+  if (document.readyState === 'complete' && appendTo) {
     return ReactDOM.createPortal(
       <Component />,
-      appendTo
+      document.querySelector(appendTo)
     );
   }
 
