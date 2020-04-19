@@ -1,6 +1,6 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "Contextmenu for react",
   "repository": "reachtokish/rctx-contextmenu",
   "author": "reachtokish <patra.kishore65@gmail.com>",
@@ -10,6 +10,9 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "homepage": "https://reachtokish.github.io/rctx-contextmenu",
+  "bugs": {
+    "url": "https://github.com/reachtokish/rctx-contextmenu/issues"
+  },
   "engines": {
     "node": ">=10"
   },

@@ -38,7 +38,7 @@
     position: relative;
     &:hover {
       // & > #{$submenu}__item {
-      //   display: block;
+      //   pointer-events: all;
       // }
       & > #{$contextmenu}__item {
         background-color: #333;
@@ -58,6 +58,7 @@
       border-radius: 4px;
       padding: 5px 0;
       opacity: 0;
+      visibility: hidden;
     }
     & > #{$contextmenu}__item {
       &:after {

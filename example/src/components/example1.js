@@ -2,18 +2,15 @@ import React from 'react';
 import { ContextMenu, ContextMenuItem, ContextMenuTrigger, Submenu } from 'src';
 import linkIco from 'example/src/assets/images/link.svg';
 
-function Basic() {
+function ExampleOne() {
   return (
-    <div id="basic">
+    <div id="example1">
       <h2 className="title">
-        <a href="#basic"><img src={linkIco} alt="link" /></a>
+        <a href="#example1"><img src={linkIco} alt="link" /></a>
         Basic example
       </h2>
       <ContextMenuTrigger
         id="my-context-menu-1"
-        attributes={{'aria-label': 'abc'}}
-        disable={false}
-        className="abc"
       >
         <div className="box">
           Right Click On Me
@@ -22,15 +19,14 @@ function Basic() {
 
       <ContextMenu
         id="my-context-menu-1"
-        onHide={() => console.log('Hey')}
       >
         <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
-        <ContextMenuItem disabled={true} className="abc">Basic Menu Item 2</ContextMenuItem>
-        <ContextMenuItem preventClose={true}>Basic Menu Item 3</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>
+        <ContextMenuItem>Basic Menu Item 3</ContextMenuItem>
         <ContextMenuItem>Basic Menu Item 4</ContextMenuItem>
       </ContextMenu>
     </div>
   )
 }
 
-export default Basic;
+export default ExampleOne;

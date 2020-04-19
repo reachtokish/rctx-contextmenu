@@ -18,7 +18,8 @@ function Submenu({
       width: submenuWidth, height: submenuHeight
     } = submenuEl.current.getBoundingClientRect();
     let style = {
-      opacity: 1
+      opacity: 1,
+      visibility: 'visible'
     };
 
     if (((itemTop + submenuHeight + itemHeight) > windowInnerHeight)) {
@@ -41,7 +42,8 @@ function Submenu({
 
   const hideSubmenu = useCallback(() => {
     const style = {
-      opacity: 0
+      opacity: 0,
+      visibility: 'hidden'
     };
 
     setSubmenuStyle(style);

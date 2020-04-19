@@ -107,3 +107,24 @@ a {
     }
   }
 }
+.trigger-wrapper {
+  display: flex;
+  flex-basis: 100%;
+  .menu-trigger {
+    margin-right: 10px;
+    width: 50%;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 130px;
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}

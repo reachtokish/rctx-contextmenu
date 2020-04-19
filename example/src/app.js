@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Basic, AppendTo, DisableMenuItem, PreventCloseItemClick, HideOnLeave } from 'example/src/components';
+import { ExampleOne, ExampleTwo, ExampleThree, ExampleFour } from 'example/src/components';
+import forkRibbon from './assets/images/fork-ribbon.png';
 
 import './style.scss';
 
@@ -12,43 +12,50 @@ const Demo = () => {
           <h1 className="header__logo">RCTXContextmenu</h1>
         </div>
       </div>
+      <a href="https://github.com/reachtokish/rctx-contextmenu" className="ribbon"><img src={forkRibbon} alt="ribbon"  /></a>
       <div className="container">
         <div className="content-wrapper">
           <div className="menu">
             <ul className="menu__list">
               <li className="menu__listitem menu__listitem--active">
-                <a href="#basic" className="menu__trigger">Basic Example</a>
+                <a href="#example1" className="menu__trigger">Example 1</a>
               </li>
               <li className="menu__listitem menu__listitem--active">
-                <a href="#appendTo" className="menu__trigger">Append To</a>
+                <a href="#example2" className="menu__trigger">Example 2</a>
               </li>
               <li className="menu__listitem menu__listitem--active">
-                <a href="#disableMenuItem" className="menu__trigger">Disable Menu Item</a>
+                <a href="#example3" className="menu__trigger">Example 3</a>
               </li>
               <li className="menu__listitem menu__listitem--active">
-                <a href="#preventCloseItemClick" className="menu__trigger">Prevent Close On Item Click</a>
-              </li>
-              <li className="menu__listitem menu__listitem--active">
-                <a href="# " className="menu__trigger">Hide On Menu Leave</a>
-              </li>
-              <li className="menu__listitem menu__listitem--active">
-                <a href="# " className="menu__trigger">preventHideOnScroll</a>
+                <a href="#example4" className="menu__trigger">Example 4</a>
               </li>
             </ul>
           </div>
           <div className="content">
 
             <div className="content__section" id="basic">
-              <Basic />
+              <ExampleOne />
             </div>
 
-            <div className="content__section" id="appendTo">
+            <div className="content__section" id="basic">
+              <ExampleTwo />
+            </div>
+
+            <div className="content__section" id="basic">
+              <ExampleThree />
+            </div>
+
+            <div className="content__section" id="basic">
+              <ExampleFour />
+            </div>
+
+            {/* <div className="content__section" id="appendTo">
               <AppendTo />
             </div>
 
             <div className="content__section" id="appendTo">
               <HideOnLeave />
-            </div>
+            </div> */}
 
             {/* <div className="content__section" id="disableMenuItem">
               <DisableMenuItem />
