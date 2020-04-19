@@ -1,5 +1,7 @@
 ![NPM Badge](https://badge.fury.io/js/rctx-contextmenu.svg)
 
+### Note: `rctx-contextmenu` Supports React 16.8 and above versions because this plugin solely uses React Hooks.
+
 # rctx-contextmenu 🔥
 Context menu plugin for React.
 [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
@@ -77,13 +79,13 @@ export default App;
 ```jsx
 <ContextMenu
   id="my-contextmenu"
+  appendTo="body"
   hideOnLeave={false}
   attributes={{
     'aria-label': 'Some text',
     'aria-labelledby': 'Some text'
   }}
   className="my-context-menu"
-  appendTo="body"
   onMouseLeave={() => console.log('Mouse left')}
   onShow={() => console.log('I am visible!')}
   onHide={() => console.log('I am hidden!')}
