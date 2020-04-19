@@ -1,6 +1,6 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.0.10",
+  "version": "1.2.0",
   "description": "Contextmenu for react",
   "repository": "reachtokish/rctx-contextmenu",
   "author": "reachtokish <patra.kishore65@gmail.com>",
@@ -25,7 +25,8 @@
     "deploy": "gh-pages -d dist",
     "lint": "eslint ./src",
     "test": "jest --verbose",
-    "test:coverage": "jest --verbose --coverage"
+    "test:coverage": "jest --verbose --coverage",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "classnames": "^2.2.6"

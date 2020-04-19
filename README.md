@@ -1,5 +1,7 @@
 ![NPM Badge](https://badge.fury.io/js/rctx-contextmenu.svg)
 
+### Note: `rctx-contextmenu` Supports React 16.8 and above versions because this plugin solely uses React Hooks.
+
 # rctx-contextmenu 🔥
 Context menu plugin for React.
 [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
@@ -15,7 +17,7 @@ There are lot of times when you want to customize the right click menu or Contex
 <!-- --------------------------------------------------- -->
 
 ## Key features :bulb:
-<!-- - Append to body or root tag :sparkler: -->
+- Append to anywhere you want :sparkler:
 - Customize styling like however you want :bouquet:
 - N level of Sub-Menu :scream:
 - Extensive list of APIs 💪
@@ -77,6 +79,7 @@ export default App;
 ```jsx
 <ContextMenu
   id="my-contextmenu"
+  appendTo="body"
   hideOnLeave={false}
   attributes={{
     'aria-label': 'Some text',
@@ -155,6 +158,12 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>`ContextMenu` and `ContextMenuTrigger` id should match.</td>
     </tr>
     <tr>
+      <td>appendTo</td>
+      <td>String</td>
+      <td>Should be a string which contains element selector like <strong>body</strong> / <strong>#id</strong> / <strong>.class</strong> . <strong>Default: Enclosed element</strong></td>
+      <td>Append context menu inside required element.</td>
+    </tr>
+    <tr>
       <td>hideOnLeave</td>
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
@@ -202,12 +211,6 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>() => {}</td>
       <td>Invoke onMouseLeave on blur or mouseOut.</td>
     </tr>
-    <!-- <tr>
-      <td>appendTo</td>
-      <td>Element</td>
-      <td>Should be a valid DOM element. <strong>Default: Enclosed element</strong></td>
-      <td>Append context menu inside the passed element</td>
-    </!-->
   </tbody>
 </table>
 
