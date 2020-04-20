@@ -13,12 +13,14 @@ function ExampleOne() {
         id="my-context-menu-1"
       >
         <div className="box">
-          Right Click On Me
+          Right Click On Mes
         </div>
       </ContextMenuTrigger>
 
       <ContextMenu
         id="my-context-menu-1"
+        preventHideOnScroll={true}
+        preventHideOnResize={true}
       >
         <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
         <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>

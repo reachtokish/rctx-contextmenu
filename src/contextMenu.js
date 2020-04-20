@@ -3,8 +3,9 @@ import React, {
 } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
+import debounce from 'lodash/debounce';
 import { registerEvent, callHideEvent } from './registerEvent';
-import { debounce } from './helper';
+// import { debounce } from './helper';
 
 function ContextMenu({
   children, id, appendTo, hideOnLeave, onMouseLeave, onHide, onShow, preventHideOnScroll,
@@ -60,20 +61,32 @@ function ContextMenu({
     });
 
     // on scroll hide handled
-    if (!preventHideOnScroll) {
-      window.addEventListener('scroll', debounce(() => {
-        callHideEvent();
-      }, 100, true));
-    }
+    // if (!preventHideOnScroll) {
+    // console.log(preventHideOnScroll);
+    window.addEventListener('scroll', debounce(() => {
+      callHideEvent(id, true);
+    }, 300, {
+      leading: true,
+      trailing: false
+    }));
+    // }
 
     // on resize hide handled
-    if (!preventHideOnResize) {
-      window.addEventListener('resize', debounce(() => {
-        callHideEvent();
-      }, 1000, {
-        leading: true
-      }));
-    }
+    // if (!preventHideOnResize) {
+    window.addEventListener('resize', debounce(() => {
+      callHideEvent();
+    }, 300, {
+      leading: true,
+      trailing: false
+    }));
+    // }
+
+    return () => {
+      document.removeEventListener('mousedown');
+      document.removeEventListener('contextmenu');
+      window.removeEventListener('scroll');
+      window.removeEventListener('resize');
+    };
   }, []);
 
   useEffect(() => {
