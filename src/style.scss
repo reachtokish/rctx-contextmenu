@@ -7,7 +7,6 @@
   top: calc(100% + 10px);
   border: solid 1px #ccc;
   border-radius: 4px;
-  // display: none;
   background-color: #fff;
   padding: 5px 0;
   z-index: 99;
@@ -37,9 +36,6 @@
 
     position: relative;
     &:hover {
-      // & > #{$submenu}__item {
-      //   pointer-events: all;
-      // }
       & > #{$contextmenu}__item {
         background-color: #333;
         color: #fff;
@@ -82,7 +78,3 @@
     }
   }
 }
-
-// .menu-trigger {
-//   display: inline-block;
-// }

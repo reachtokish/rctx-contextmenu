@@ -10,7 +10,7 @@ function ContextMenuTrigger({
   const handleContextMenu = useCallback(e => {
     if (disable) return;
     if (disableWhileShiftPressed && e.nativeEvent.shiftKey) {
-      callHideEvent();
+      callHideEvent(id);
       return;
     }
     e.preventDefault();

@@ -26,9 +26,11 @@ const callShowEvent = opts => {
   });
 };
 
-const callHideEvent = () => {
-  if (activeEvent.hideMenu) activeEvent.hideMenu();
-  activeEvent = {};
+const callHideEvent = menuId => {
+  if (activeEvent.id === menuId || menuId === 'ID_NOT_REQUIRED') {
+    if (activeEvent.hideMenu) activeEvent.hideMenu();
+    activeEvent = {};
+  }
 };
 
 export {
