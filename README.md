@@ -2,7 +2,7 @@
 
 ### Note: `rctx-contextmenu` Supports React 16.8 and above versions because this plugin solely uses React Hooks.
 
-# rctx-contextmenu 🔥
+# rctx-contextmenu
 Context menu plugin for React.
 [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
 
@@ -16,36 +16,35 @@ There are lot of times when you want to customize the right click menu or Contex
 
 <!-- --------------------------------------------------- -->
 
-## Key features :bulb:
-- Append to anywhere you want :sparkler:
-- Customize styling like however you want :bouquet:
-- N level of Sub-Menu :scream:
-- Extensive list of APIs 💪
+## Key features
+- Append to anywhere you want
+- Customize styling like however you want
+- N level of Sub-Menu
+- Extensive list of APIs
 
 <!-- --------------------------------------------------- -->
 
-## Table of contents :pizza:
-- [Installation](#installation-heavy_check_mark)
-- [Sample Usage](#sample-usage-rocket)
-- [Full Example Usage](#Full-example-usage-blue_heart)
-- [Live Demo](#live-demo-saxophone)
-- [Example Code](#example-code-book)
-- [APIs](#apis-evergreen_tree)
-- [Styling](#styling-ear_of_rice)
-- [Upcoming Features](#Upcoming-Features-point_down)
+## Table of contents
+- [Installation](#installation)
+- [Sample Usage](#sample-usage)
+- [Full Example Usage](#Full-example-usage)
+- [Live Demo](#live-demo)
+- [Example Code](#example-code)
+- [APIs](#apis)
+- [Styling](#styling)
 - [Contributions](#contributions-pray)
-- [LICENSE](#license-triangular_flag_on_post)
+- [LICENSE](#license)
 
 <!-- --------------------------------------------------- -->
 
-## Installation :heavy_check_mark:
+## Installation
 ```
 npm install --save rctx-contextmenu
 ```
 
 <!-- --------------------------------------------------- -->
 
-## Sample Usage :rocket:
+## Sample Usage
 ```jsx
 import React from 'react';
 import { ContextMenuTrigger, ContextMenu, ContextMenuItem } from 'rctx-contextmenu';
@@ -75,12 +74,14 @@ export default App;
 ```
 <!-- --------------------------------------------------- -->
 
-## Full example usage :blue_heart:
+## Full example usage
 ```jsx
 <ContextMenu
   id="my-contextmenu"
   appendTo="body"
   hideOnLeave={false}
+  preventHideOnScroll={true}
+  preventHideOnResize={true}
   attributes={{
     'aria-label': 'Some text',
     'aria-labelledby': 'Some text'
@@ -129,17 +130,17 @@ export default App;
 />
 ```
 
-## Live Demo :saxophone:
+## Live Demo
 Live demo is available [here](https://reachtokish.github.io/rctx-contextmenu/).
 
 <!-- --------------------------------------------------- -->
 
-## Example Code :book:
+## Example Code
 Example code is available [here](https://github.com/reachtokish/rctx-contextmenu/tree/master/example).
 
 <!-- --------------------------------------------------- -->
 
-## APIs :evergreen_tree:
+## APIs
 #### `<ContextMenu />`
 <table class="table table-bordered table-striped">
   <thead>
@@ -181,7 +182,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>-</td>
       <td>Additional classes.</td>
     </tr>
-    <!-- <tr>
+    <tr>
       <td>preventHideOnResize</td>
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
@@ -192,7 +193,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Boolean</td>
       <td>true / false. <strong>Default: false</strong></td>
       <td>Prevent hiding contextmenu from hiding on scroll.</td>
-    </tr> -->
+    </tr>
     <tr>
       <td>onShow</td>
       <td>Function</td>
@@ -336,7 +337,7 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
 
 <!-- --------------------------------------------------- -->
 
-## Styling :ear_of_rice:
+## Styling
 Styling is totally up to you. You can use CSS or even SCSS to customize the styling part. Below are the classes you can consider for styling
 
 - **menu-trigger** (Right click area wrapper)
@@ -348,17 +349,27 @@ Styling is totally up to you. You can use CSS or even SCSS to customize the styl
 
 <!-- --------------------------------------------------- -->
 
-## Upcoming Features on Priority :point_down:
-- Handle scroll hide ([#8](https://github.com/reachtokish/rctx-contextmenu/issues/8))
-- Handle resize hide ([#9](https://github.com/reachtokish/rctx-contextmenu/issues/9))
-- Append to required element ([#10](https://github.com/reachtokish/rctx-contextmenu/issues/10))
-
-<!-- --------------------------------------------------- -->
-
 ## Contributions :pray:
 Any kind of contribution would be much appreciated. It could be small change in the doc or even any kind of advice. You can create issues if you feel any feature which is missing which solves bigger problems.
 
 <!-- --------------------------------------------------- -->
 
-## License :triangular_flag_on_post:
+## Develop locally
+First clone the repo
+```
+https://github.com/reachtokish/rctx-contextmenu.git
+```
+Navigate inside rctx-contextmenu folder
+```
+cd rctx-contextmenu
+```
+Then start server to run it locally
+```
+npm start
+```
+Now app should run on `localhost:1234`
+
+<!-- --------------------------------------------------- -->
+
+## License
 MIT License

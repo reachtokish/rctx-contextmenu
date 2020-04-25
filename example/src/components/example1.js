@@ -19,8 +19,6 @@ function ExampleOne() {
 
       <ContextMenu
         id="my-context-menu-1"
-        preventHideOnScroll={true}
-        preventHideOnResize={true}
       >
         <ContextMenuItem>Basic Menu Item 1</ContextMenuItem>
         <ContextMenuItem>Basic Menu Item 2</ContextMenuItem>

@@ -11,7 +11,7 @@ function ContextMenuItem({
     if (disabled) return;
     onClick(e);
 
-    if (!preventClose) callHideEvent();
+    if (!preventClose) callHideEvent('ID_NOT_REQUIRED');
   });
 
   return (
@@ -25,7 +25,6 @@ function ContextMenuItem({
           ...className.split(' ')
         )
       }
-      // className={`contextmenu__item${disabled ? ' contextmenu__item--disabled' : ''}`}
       onClick={handleClickEvent}
       {...attributes}
       ref={contextMenuItem}

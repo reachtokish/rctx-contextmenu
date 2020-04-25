@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import { registerEvent, callHideEvent } from './registerEvent';
-// import { debounce } from './helper';
 
 function ContextMenu({
   children, id, appendTo, hideOnLeave, onMouseLeave, onHide, onShow, preventHideOnScroll,
@@ -32,7 +31,7 @@ function ContextMenu({
 
     onMouseLeave(e);
 
-    if (hideOnLeave) callHideEvent();
+    if (hideOnLeave) callHideEvent(id);
   });
 
   useEffect(() => {
@@ -41,7 +40,7 @@ function ContextMenu({
     // detect click outside
     document.addEventListener('mousedown', event => {
       if (contextMenuEl.current && !contextMenuEl.current.contains(event.target)) {
-        callHideEvent();
+        callHideEvent(id);
       }
     });
 
@@ -57,29 +56,28 @@ function ContextMenu({
       }
       while (targetElement);
 
-      callHideEvent();
+      callHideEvent(id);
     });
 
     // on scroll hide handled
-    // if (!preventHideOnScroll) {
-    // console.log(preventHideOnScroll);
-    window.addEventListener('scroll', debounce(() => {
-      callHideEvent(id, true);
-    }, 300, {
-      leading: true,
-      trailing: false
-    }));
-    // }
+    if (!preventHideOnScroll) {
+      window.addEventListener('scroll', debounce(() => {
+        callHideEvent(id);
+      }, 300, {
+        leading: true,
+        trailing: false
+      }));
+    }
 
     // on resize hide handled
-    // if (!preventHideOnResize) {
-    window.addEventListener('resize', debounce(() => {
-      callHideEvent();
-    }, 300, {
-      leading: true,
-      trailing: false
-    }));
-    // }
+    if (!preventHideOnResize) {
+      window.addEventListener('resize', debounce(() => {
+        callHideEvent(id);
+      }, 300, {
+        leading: true,
+        trailing: false
+      }));
+    }
 
     return () => {
       document.removeEventListener('mousedown');
