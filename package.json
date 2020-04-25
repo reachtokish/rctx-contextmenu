@@ -51,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
     "gh-pages": "^2.2.0",
+    "husky": "^4.2.5",
     "jest": "^25.3.0",
     "jest-enzyme": "^7.1.2",
     "node-sass": "^4.13.1",
@@ -96,6 +97,12 @@
       }
     },
     "testRegex": "./src/tests/.*.js$"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   },
   "keywords": [
     "react",

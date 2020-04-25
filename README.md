@@ -24,6 +24,13 @@ There are lot of times when you want to customize the right click menu or Contex
 
 <!-- --------------------------------------------------- -->
 
+## Browser Support
+- IE 11 and Edge >= 12
+- FireFox >= 38
+- Chrome >= 47
+
+<!-- --------------------------------------------------- -->
+
 ## Table of contents
 - [Installation](#installation)
 - [Sample Usage](#sample-usage)
