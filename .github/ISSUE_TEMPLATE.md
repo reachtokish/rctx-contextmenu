@@ -1,5 +1,5 @@
 <!--
-Thanks for taking your valuable time and raising the issue.
+Thanks for taking your valuable time and raising the issue. Kindly provide the below information
 -->
 
 - `gatsby-remark-embedder` version:
