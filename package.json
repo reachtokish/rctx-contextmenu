@@ -1,6 +1,6 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Contextmenu for react",
   "repository": "reachtokish/rctx-contextmenu",
   "author": "reachtokish <patra.kishore65@gmail.com>",
@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",

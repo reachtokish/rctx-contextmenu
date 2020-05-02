@@ -6,6 +6,8 @@
 Context menu plugin for React.
 [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
 
+[![RCTX Contextmenu](./screenshot.jpg)](https://reachtokish.github.io/rctx-contextmenu/)
+
 ## The problem :hushed:
 There are lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
 
@@ -19,7 +21,7 @@ There are lot of times when you want to customize the right click menu or Contex
 ## Key features
 - Append to anywhere you want
 - Customize styling like however you want
-- N level of Sub-Menu
+- In-built animation
 - Extensive list of APIs
 
 <!-- --------------------------------------------------- -->
@@ -86,6 +88,7 @@ export default App;
 <ContextMenu
   id="my-contextmenu"
   appendTo="body"
+  animation="zoom"
   hideOnLeave={false}
   preventHideOnScroll={true}
   preventHideOnResize={true}
@@ -170,6 +173,12 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>String</td>
       <td>Should be a string which contains element selector like <strong>body</strong> / <strong>#id</strong> / <strong>.class</strong> . <strong>Default: Enclosed element</strong></td>
       <td>Append context menu inside required element.</td>
+    </tr>
+    <tr>
+      <td>animation</td>
+      <td>String</td>
+      <td>Enums: <strong>fade</strong> | <strong>zoom<strong> | <strong>pop</strong> | <strong>toTopLeft</strong> | <strong>rightToLeft</strong></td>
+      <td>Make the contextmenu visible in animated way.</td>
     </tr>
     <tr>
       <td>hideOnLeave</td>

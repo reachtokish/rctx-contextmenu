@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 body {
   margin: 0;
   padding: 0;
+  background-color: #FFFBFB;
+  -webkit-font-smoothing: antialiased;
 }
 ul {
   list-style: none;
@@ -75,6 +77,8 @@ a {
 .title {
   margin: 0 0 15px;
   position: relative;
+  font-weight: 500;
+  font-size: 20px;
   &:hover {
     a {
       display: flex;
@@ -127,4 +131,103 @@ a {
     max-width: 100%;
     display: block;
   }
+}
+
+.music-box-holder {
+  display: flex;
+  flex-wrap: wrap;
+  .music-box {
+    display: flex;
+    width: 33%;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: #FF2E57;
+      .music-box-left {
+        background-color: #fff;
+        p {
+          color: #FF2E57;
+        }
+        .music-icon {
+          svg {
+            fill: #FF2E57;
+          }
+        }
+      }
+      .music-box-right {
+        h3, p, span {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .music-box-left {
+    width: 100px;
+    background-color: #FF2E57;
+    text-align: center;
+    border-radius: 4px;
+    transition: 0.2s;
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: #fff;
+      background-color: rgba(0,0,0,0.1);
+      padding: 7px 0;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+  }
+  .music-icon {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+      transition: 0.2s;
+    }
+  }
+  .music-box-right {
+    width: 60%;
+    h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+    p {
+      color: #949494;
+      font-size: 14px;
+      margin: 0 0 5px;
+      transition: 0.2s;
+    }
+    span {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 8px;
+      color: #909090;
+      transition: 0.2s;
+    }
+  }
+}
+
+.contextmenu__item {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  img {
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+  }
+}
+.contextmenu {
+  width: 250px;
 }
