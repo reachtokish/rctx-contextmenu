@@ -162,7 +162,7 @@ ContextMenu.defaultProps = {
   preventHideOnScroll: false,
   attributes: {},
   className: '',
-  animation: 'fadein',
+  animation: 'fade',
   onMouseLeave: () => null,
   onHide: () => null,
   onShow: () => null

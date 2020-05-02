@@ -27,7 +27,7 @@ function ExampleTwo() {
           </ContextMenuTrigger>
         ))}
       </div>
-      <ContextMenu id="context-menu-2" animation="zoomin">
+      <ContextMenu id="context-menu-2" animation="zoom">
         <ContextMenuItem>Play</ContextMenuItem>
         <ContextMenuItem>Add to Media Player List</ContextMenuItem>
         <ContextMenuItem disabled={true}>Restore Previous Version</ContextMenuItem>
