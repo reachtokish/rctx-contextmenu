@@ -6,6 +6,8 @@
 Context menu plugin for React.
 [Live Demo](https://reachtokish.github.io/rctx-contextmenu/) | [Example Code](https://github.com/reachtokish/rctx-contextmenu/tree/master/example)
 
+[![RCTX Contextmenu](./screenshot.jpg)](https://reachtokish.github.io/rctx-contextmenu/)
+
 ## The problem :hushed:
 There are lot of times when you want to customize the right click menu or Context Menu. May be you want to add more customized options or even sub options with same look and feel how a native context menu gives.
 

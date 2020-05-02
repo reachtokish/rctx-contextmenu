@@ -5,10 +5,11 @@ import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import { registerEvent, callHideEvent } from './registerEvent';
+import AnimateComponent from './animateComponent';
 
 function ContextMenu({
   children, id, appendTo, hideOnLeave, onMouseLeave, onHide, onShow, preventHideOnScroll,
-  preventHideOnResize, attributes, className
+  preventHideOnResize, attributes, className, animation
 }) {
   const contextMenuEl = useRef(null);
   const [isVisible, setVisible] = useState(false);
@@ -109,29 +110,47 @@ function ContextMenu({
   const childrenWithProps = React.Children
     .map(children, child => React.cloneElement(child, { id }));
 
-  const Component = () => (
-    <>
-      {isVisible && (
-        <div
-          className={classnames('contextmenu', ...className.split(' '))}
-          ref={contextMenuEl}
-          onMouseLeave={handleMouseLeave}
-          {...attributes}
-        >
-          {childrenWithProps}
-        </div>
-      )}
-    </>
+  const ContextComponent = () => (
+    <div
+      className={classnames('contextmenu', ...className.split(' '))}
+      ref={contextMenuEl}
+      onMouseLeave={handleMouseLeave}
+      {...attributes}
+    >
+      {childrenWithProps}
+    </div>
+  );
+
+  const PortalContextComponent = () => (
+    ReactDOM.createPortal(
+      <ContextComponent />,
+      document.querySelector(appendTo)
+    )
   );
 
   if (document.readyState === 'complete' && appendTo) {
-    return ReactDOM.createPortal(
-      <Component />,
-      document.querySelector(appendTo)
+    return animation ? (
+      <AnimateComponent
+        isVisible={isVisible}
+        timeout={200}
+        className={animation}
+      >
+        <PortalContextComponent />
+      </AnimateComponent>
+    ) : (
+      <PortalContextComponent />
     );
   }
 
-  return <Component />;
+  return animation ? (
+    <AnimateComponent
+      isVisible={isVisible}
+      timeout={200}
+      className={animation}
+    >
+      <ContextComponent />
+    </AnimateComponent>
+  ) : <ContextComponent />;
 }
 
 export default ContextMenu;
@@ -143,6 +162,7 @@ ContextMenu.defaultProps = {
   preventHideOnScroll: false,
   attributes: {},
   className: '',
+  animation: 'fadein',
   onMouseLeave: () => null,
   onHide: () => null,
   onShow: () => null
