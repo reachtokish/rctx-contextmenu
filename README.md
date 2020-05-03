@@ -387,5 +387,9 @@ Now app should run on `localhost:1234`
 
 <!-- --------------------------------------------------- -->
 
+Design inspiration [Khalid Hasan Zibon / Dribble](https://dribbble.com/shots/3434722-Fixing-Windows-10-Context-Menu)
+
+<!-- --------------------------------------------------- -->
+
 ## License
 MIT License
