@@ -1,4 +1,4 @@
-import { uniqueId, debounce } from '../helper';
+import { uniqueId, throttle } from '../helper';
 
 jest.useFakeTimers();
 
@@ -15,7 +15,7 @@ describe('debounce', () => {
 
   beforeEach(() => {
     func = jest.fn();
-    debouncedFunc = debounce(func, 1000);
+    debouncedFunc = throttle(func, 1000);
   });
 
   test('execute just once', () => {

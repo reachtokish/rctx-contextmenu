@@ -3,9 +3,9 @@ import React, {
 } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import debounce from 'lodash/debounce';
 import { registerEvent, callHideEvent } from './registerEvent';
 import AnimateComponent from './animateComponent';
+import { throttle } from './helper';
 
 function ContextMenu({
   children, id, appendTo, hideOnLeave, onMouseLeave, onHide, onShow, preventHideOnScroll,
@@ -62,22 +62,16 @@ function ContextMenu({
 
     // on scroll hide handled
     if (!preventHideOnScroll) {
-      window.addEventListener('scroll', debounce(() => {
+      window.addEventListener('scroll', throttle(() => {
         callHideEvent(id);
-      }, 300, {
-        leading: true,
-        trailing: false
-      }));
+      }, 200));
     }
 
     // on resize hide handled
     if (!preventHideOnResize) {
-      window.addEventListener('resize', debounce(() => {
+      window.addEventListener('resize', throttle(() => {
         callHideEvent(id);
-      }, 300, {
-        leading: true,
-        trailing: false
-      }));
+      }, 200));
     }
 
     return () => {

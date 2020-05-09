@@ -1,15 +1,13 @@
-import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
-import postcss from 'rollup-plugin-postcss'
-import resolve from 'rollup-plugin-node-resolve'
-import url from 'rollup-plugin-url'
-import svgr from '@svgr/rollup'
+import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
+import external from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
+import resolve from 'rollup-plugin-node-resolve';
 import react from 'react';
 import reactDom from 'react-dom';
-import lodash from 'lodash';
+import { terser } from 'rollup-plugin-terser';
 
-import pkg from './package.json'
+import pkg from './package.json';
 
 export default {
   input: 'src/index.js',
@@ -17,29 +15,28 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: false,
       globals: {
-        'react': 'React',
+        react: 'React',
         'react-dom': 'ReactDOM'
       }
     },
     {
       file: pkg.module,
       format: 'es',
-      sourcemap: true,
+      sourcemap: false,
       globals: {
-        'react': 'React',
+        react: 'React',
         'react-dom': 'ReactDOM'
       }
     }
   ],
   plugins: [
+    terser(),
     external(),
     postcss({
-      extensions: ['.css', '.scss'],
+      extensions: ['.css', '.scss']
     }),
-    url(),
-    svgr(),
     babel({
       exclude: 'node_modules/**',
       plugins: []
@@ -48,10 +45,9 @@ export default {
     commonjs({
       include: 'node_modules/**',
       namedExports: {
-        'react': Object.keys(react),
-        'react-dom': Object.keys(reactDom),
-        'lodash': Object.keys(lodash)
+        react: Object.keys(react),
+        'react-dom': Object.keys(reactDom)
       }
     })
   ]
-}
+};

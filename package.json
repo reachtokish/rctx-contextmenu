@@ -1,6 +1,6 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Contextmenu for react",
   "repository": "reachtokish/rctx-contextmenu",
   "author": "reachtokish <patra.kishore65@gmail.com>",
@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash": "^4.17.15",
-    "react-transition-group": "^4.3.0"
+    "react-transition-group": "^4.3.0",
+    "rollup": "^2.8.2"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -61,7 +61,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "rollup": "^0.64.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-css-only": "^1.0.0",
@@ -107,6 +106,10 @@
     "react-contextmenu",
     "rctx-contextmenu",
     "react-component",
-    "right click"
+    "right click",
+    "react context menu",
+    "react right click menu",
+    "right click menu",
+    "window right click menu"
   ]
 }
