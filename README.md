@@ -373,7 +373,7 @@ Any kind of contribution would be much appreciated. It could be small change in 
 ## Develop locally
 First clone the repo
 ```
-https://github.com/reachtokish/rctx-contextmenu.git
+git clone https://github.com/reachtokish/rctx-contextmenu.git
 ```
 Navigate inside rctx-contextmenu folder
 ```
