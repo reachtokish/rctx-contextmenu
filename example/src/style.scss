@@ -146,6 +146,7 @@ a {
     border-radius: 4px;
     margin-bottom: 10px;
     cursor: pointer;
+    position: relative;
     &:hover {
       background-color: #FF2E57;
       .music-box-left {
@@ -163,6 +164,10 @@ a {
         h3, p, span {
           color: #fff;
         }
+      }
+      .close-btn {
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -230,4 +235,31 @@ a {
 }
 .contextmenu {
   width: 250px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  width: 25px;
+  height: 25px;
+  font-size: 16px;
+  padding: 0;
+  background-color: #fff;
+  border: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.add-track {
+  padding: 3px 10px;
+  margin-left: 10px;
+  border: 0;
+  background-color: #32c552;
+  color: #fff;
+  border-radius: 2px;
 }

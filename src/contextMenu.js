@@ -35,50 +35,58 @@ function ContextMenu({
     if (hideOnLeave) callHideEvent(id);
   });
 
+  const clickOutsideCallback = event => {
+    if (contextMenuEl.current && !contextMenuEl.current.contains(event.target)) {
+      callHideEvent(id);
+    }
+  }
+
+  const contextMenuCallback = event => {
+    let targetElement = event.target;
+
+    do {
+      if (targetElement.classList && targetElement.classList.contains('menu-trigger')) {
+        return;
+      }
+      targetElement = targetElement.parentNode;
+    }
+    while (targetElement);
+
+    callHideEvent(id);
+  }
+
+  const onScrollHideCallback = throttle(() => {
+    callHideEvent(id);
+  }, 200)
+
+  const onResizeHideCallback = throttle(() => {
+    callHideEvent(id);
+  }, 200)
+
   useEffect(() => {
     registerEvent(id, showMenu, hideMenu);
 
     // detect click outside
-    document.addEventListener('mousedown', event => {
-      if (contextMenuEl.current && !contextMenuEl.current.contains(event.target)) {
-        callHideEvent(id);
-      }
-    });
+    document.addEventListener('mousedown', clickOutsideCallback);
 
     // detect right click outside
-    document.addEventListener('contextmenu', evt => {
-      let targetElement = evt.target;
-
-      do {
-        if (targetElement.classList && targetElement.classList.contains('menu-trigger')) {
-          return;
-        }
-        targetElement = targetElement.parentNode;
-      }
-      while (targetElement);
-
-      callHideEvent(id);
-    });
+    document.addEventListener('contextmenu', contextMenuCallback);
 
     // on scroll hide handled
     if (!preventHideOnScroll) {
-      window.addEventListener('scroll', throttle(() => {
-        callHideEvent(id);
-      }, 200));
+      window.addEventListener('scroll', onScrollHideCallback);
     }
 
     // on resize hide handled
     if (!preventHideOnResize) {
-      window.addEventListener('resize', throttle(() => {
-        callHideEvent(id);
-      }, 200));
+      window.addEventListener('resize', onResizeHideCallback);
     }
 
     return () => {
-      document.removeEventListener('mousedown');
-      document.removeEventListener('contextmenu');
-      window.removeEventListener('scroll');
-      window.removeEventListener('resize');
+      document.removeEventListener('mousedown', clickOutsideCallback);
+      document.removeEventListener('contextmenu', contextMenuCallback);
+      window.removeEventListener('scroll', onScrollHideCallback);
+      window.removeEventListener('resize', onResizeHideCallback);
     };
   }, []);
 

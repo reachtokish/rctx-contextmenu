@@ -23,6 +23,7 @@ There are lot of times when you want to customize the right click menu or Contex
 - Customize styling like however you want
 - In-built animation
 - Extensive list of APIs
+- Dynamically add/remove menus
 
 <!-- --------------------------------------------------- -->
 
@@ -378,6 +379,10 @@ git clone https://github.com/reachtokish/rctx-contextmenu.git
 Navigate inside rctx-contextmenu folder
 ```
 cd rctx-contextmenu
+```
+Install dependencies
+```
+npm install
 ```
 Then start server to run it locally
 ```
