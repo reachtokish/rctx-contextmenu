@@ -263,3 +263,16 @@ a {
   color: #fff;
   border-radius: 2px;
 }
+.nested {
+  background-color: #FF2E57;
+  border-radius: 4px;
+  padding: 15px;
+  color: #fff;
+  font-size: 20px;
+  .nested_item {
+    background-color: #e52b4f;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 4px;
+  }
+}
