@@ -1,15 +1,15 @@
-import React, { useCallback, useState, useRef } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import ContextMenuItem from './contextMenuItem';
 
 function Submenu({
   children, title, attributes, className
 }) {
-  const [submenuStyle, setSubmenuStyle] = useState(null);
-  const submenuEl = useRef(null);
-  const submenuItem = useRef(null);
+  const [submenuStyle, setSubmenuStyle] = React.useState(null);
+  const submenuEl = React.useRef(null);
+  const submenuItem = React.useRef(null);
 
-  const calculateSubmenuPos = useCallback(() => {
+  const calculateSubmenuPos = () => {
     const { innerHeight: windowInnerHeight, innerWidth: windowInnerWidth } = window;
     const {
       left: itemLeft, top: itemTop, width: itemWidth, height: itemHeight
@@ -38,16 +38,16 @@ function Submenu({
     }
 
     setSubmenuStyle(style);
-  });
+  };
 
-  const hideSubmenu = useCallback(() => {
+  const hideSubmenu = () => {
     const style = {
       opacity: 0,
       visibility: 'hidden'
     };
 
     setSubmenuStyle(style);
-  });
+  };
 
   return (
     <div

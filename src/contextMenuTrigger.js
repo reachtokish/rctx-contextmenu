@@ -1,13 +1,13 @@
-import React, { useRef, useCallback } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { callShowEvent, callHideEvent } from './registerEvent';
 
 function ContextMenuTrigger({
   children, id, disableWhileShiftPressed, attributes, disable, className
 }) {
-  const menuTrigger = useRef(null);
+  const menuTrigger = React.useRef(null);
 
-  const handleContextMenu = useCallback(e => {
+  const handleContextMenu = e => {
     if (disable) return;
     if (disableWhileShiftPressed && e.nativeEvent.shiftKey) {
       callHideEvent(id);
@@ -26,7 +26,7 @@ function ContextMenuTrigger({
     };
 
     callShowEvent(opts);
-  });
+  };
 
   return (
     <div

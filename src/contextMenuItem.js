@@ -1,18 +1,18 @@
-import React, { useCallback, useRef } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { callHideEvent } from './registerEvent';
 
 function ContextMenuItem({
   children, onClick, disabled, preventClose, attributes, className
 }) {
-  const contextMenuItem = useRef(null);
+  const contextMenuItem = React.useRef(null);
 
-  const handleClickEvent = useCallback(e => {
+  const handleClickEvent = e => {
     if (disabled) return;
     onClick(e);
 
     if (!preventClose) callHideEvent('ID_NOT_REQUIRED');
-  });
+  };
 
   return (
     <div

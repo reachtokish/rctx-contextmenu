@@ -1,6 +1,4 @@
-import React, {
-  useRef, useEffect, useState, useCallback
-} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import { registerEvent, callHideEvent } from './registerEvent';
@@ -11,9 +9,9 @@ function ContextMenu({
   children, id, appendTo, hideOnLeave, onMouseLeave, onHide, onShow, preventHideOnScroll,
   preventHideOnResize, attributes, className, animation
 }) {
-  const contextMenuEl = useRef(null);
-  const [isVisible, setVisible] = useState(false);
-  const [clientPosition, setClientPosition] = useState(null);
+  const contextMenuEl = React.useRef(null);
+  const [isVisible, setVisible] = React.useState(false);
+  const [clientPosition, setClientPosition] = React.useState(null);
 
   const showMenu = e => {
     const { position } = e;
@@ -27,19 +25,19 @@ function ContextMenu({
     if (onHide) onHide();
   };
 
-  const handleMouseLeave = useCallback(e => {
+  const handleMouseLeave = e => {
     e.preventDefault();
 
     onMouseLeave(e);
 
     if (hideOnLeave) callHideEvent(id);
-  });
+  };
 
   const clickOutsideCallback = event => {
     if (contextMenuEl.current && !contextMenuEl.current.contains(event.target)) {
       callHideEvent(id);
     }
-  }
+  };
 
   const contextMenuCallback = event => {
     let targetElement = event.target;
@@ -53,17 +51,17 @@ function ContextMenu({
     while (targetElement);
 
     callHideEvent(id);
-  }
+  };
 
   const onScrollHideCallback = throttle(() => {
     callHideEvent(id);
-  }, 200)
+  }, 200);
 
   const onResizeHideCallback = throttle(() => {
     callHideEvent(id);
-  }, 200)
+  }, 200);
 
-  useEffect(() => {
+  React.useEffect(() => {
     registerEvent(id, showMenu, hideMenu);
 
     // detect click outside
@@ -88,9 +86,10 @@ function ContextMenu({
       window.removeEventListener('scroll', onScrollHideCallback);
       window.removeEventListener('resize', onResizeHideCallback);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (isVisible) {
       const { clientY, clientX } = clientPosition;
       const { innerHeight: windowInnerHeight, innerWidth: windowInnerWidth } = window;
@@ -107,6 +106,7 @@ function ContextMenu({
 
       if (onShow) onShow();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible, clientPosition]);
 
   const childrenWithProps = React.Children
