@@ -14,6 +14,7 @@ function ContextMenuTrigger({
       return;
     }
     e.preventDefault();
+    e.stopPropagation();
 
     const { clientX, clientY } = e.nativeEvent;
     const opts = {

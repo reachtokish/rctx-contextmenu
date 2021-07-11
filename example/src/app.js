@@ -1,5 +1,8 @@
 import React from 'react';
-import { ExampleOne, ExampleTwo, ExampleThree, ExampleFour, ExampleFive, ExampleSix } from 'example/src/examples';
+import {
+  ExampleOne, ExampleTwo, ExampleThree, ExampleFour, ExampleFive, ExampleSix,
+  ExampleSeven
+} from 'example/src/examples';
 import forkRibbon from './assets/images/fork-ribbon.png';
 
 import './style.scss';
@@ -40,6 +43,11 @@ const Demo = () => {
             <div className="content__section">
               <ExampleSix />
             </div>
+
+            <div className="content__section">
+              <ExampleSeven />
+            </div>
+
           </div>
         </div>
       </div>
