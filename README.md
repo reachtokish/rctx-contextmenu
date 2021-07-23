@@ -312,6 +312,12 @@ Example code is available [here](https://github.com/reachtokish/rctx-contextmenu
       <td>Disable contextmenu and open browser default contextmenu.</td>
     </tr>
     <tr>
+      <td>onLeftClick</td>
+      <td>true / false. <strong>Default: false</strong></td>
+      <td>false</td>
+      <td>contextMenu will trigger on left click instead of Right</td>
+    </tr>
+    <tr>
       <td>className</td>
       <td>String</td>
       <td>-</td>
