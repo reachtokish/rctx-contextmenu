@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { callShowEvent, callHideEvent } from './registerEvent';
 
 function ContextMenuTrigger({
-  children, id, disableWhileShiftPressed, attributes, disable, className
+  children, id, disableWhileShiftPressed, onLeftClick, attributes, disable, className
 }) {
   const menuTrigger = useRef(null);
 
@@ -33,7 +33,8 @@ function ContextMenuTrigger({
       className={classnames('menu-trigger', ...className.split(' '))}
       ref={menuTrigger}
       {...attributes}
-      onContextMenu={e => handleContextMenu(e)}
+      onClick={e => (onLeftClick ? handleContextMenu(e) : undefined)}
+      onContextMenu={e => (!onLeftClick ? handleContextMenu(e) : undefined)}
     >
       {children}
     </div>
@@ -45,6 +46,7 @@ export default ContextMenuTrigger;
 ContextMenuTrigger.defaultProps = {
   attributes: {},
   disable: false,
+  onLeftClick: false,
   renderTag: 'div',
   disableWhileShiftPressed: false,
   className: ''

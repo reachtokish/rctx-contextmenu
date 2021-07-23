@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ExampleOne, ExampleTwo, ExampleThree, ExampleFour, ExampleFive, ExampleSix,
-  ExampleSeven
+  ExampleSeven, ExampleEight
 } from 'example/src/examples';
 import forkRibbon from './assets/images/fork-ribbon.png';
 
@@ -46,6 +46,10 @@ const Demo = () => {
 
             <div className="content__section">
               <ExampleSeven />
+            </div>
+
+            <div className="content__section">
+              <ExampleEight />
             </div>
 
           </div>
