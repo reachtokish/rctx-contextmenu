@@ -1,6 +1,6 @@
 {
   "name": "rctx-contextmenu",
-  "version": "1.3.5",
+  "version": "1.3.7",
   "description": "Contextmenu for react",
   "repository": "reachtokish/rctx-contextmenu",
   "author": "reachtokish <patra.kishore65@gmail.com>",
@@ -9,6 +9,7 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "typings": "src/index.d.ts",
   "homepage": "https://reachtokish.github.io/rctx-contextmenu",
   "bugs": {
     "url": "https://github.com/reachtokish/rctx-contextmenu/issues"
@@ -31,8 +32,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "react-transition-group": "^4.3.0",
-    "rollup": "^2.8.2"
+    "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -61,6 +61,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
+    "rollup": "2.8.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^9.1.3",
     "rollup-plugin-css-only": "^1.0.0",
@@ -80,7 +81,8 @@
     "react-dom": ">=16.8.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/index.d.ts"
   ],
   "alias": {
     "example": "./example",
