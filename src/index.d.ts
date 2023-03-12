@@ -8,6 +8,7 @@ declare module "rctx-contextmenu" {
     hideOnLeave?: boolean,
     attributes?: object,
     className?: string,
+    children?: ReactNode,
     preventHideOnResize?: boolean,
     preventHideOnScroll?: boolean,
     onShow?: {(event: any): void},
@@ -21,6 +22,7 @@ declare module "rctx-contextmenu" {
     disableWhileShiftPressed?: boolean,
     attributes?: object,
     className?: string,
+    children?: ReactNode,
     onClick?: {(event: any): void}
   }
 
@@ -28,13 +30,15 @@ declare module "rctx-contextmenu" {
     id: string,
     attributes?: object,
     disable?: boolean,
-    className?: string
+    className?: string,
+    children?: ReactNode
   }
 
   export interface Submenu {
     title: string,
     attributes?: object,
-    className?: boolean
+    className?: boolean,
+    children?: ReactNode
   }
 
   export const ContextMenu: React.FunctionComponent<ContextMenu>;
