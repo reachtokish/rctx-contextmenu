@@ -1,4 +1,4 @@
-![NPM Badge](https://badge.fury.io/js/rctx-contextmenu.svg)
+![npm](https://img.shields.io/npm/v/rctx-contextmenu)
 
 ### Note: `rctx-contextmenu` Supports React 16.8 and above versions because this plugin solely uses React Hooks.
 
