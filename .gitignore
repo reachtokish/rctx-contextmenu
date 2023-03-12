@@ -6,3 +6,4 @@ package-lock.json
 __snapshots__
 coverage
 blog
+.vscode
