@@ -5,9 +5,8 @@ export const uniqueId = () => `_${Math.random().toString(36).substr(2, 9)}`;
 export const throttle = (func, limit) => {
   let lastFunc;
   let lastRan;
-  return () => {
+  return (...args) => {
     const context = window;
-    const args = arguments;
     if (!lastRan) {
       func.apply(context, args);
       lastRan = Date.now();
